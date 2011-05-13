@@ -1,0 +1,78 @@
+.TH "/home/niall/Projects/Eclipse/cryo-opencl/src/OpenCLPrint.cpp" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/niall/Projects/Eclipse/cryo-opencl/src/OpenCLPrint.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'OpenCLPrint.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBcl::Platform\fP &platform)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const std::vector< \fBcl::Platform\fP > &platforms)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBcl::Device\fP &device)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const std::vector< \fBcl::Device\fP > &devices)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBcl::Context\fP &context)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBcl::CommandQueue\fP &queue)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBcl::Kernel\fP &kernel)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBcl::Program\fP &program)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBcl::Platform\fP &platform)"
+.PP
+Definition at line 330 of file OpenCLPrint.cpp.
+.PP
+References cl::Platform::getInfo().
+.SS "std::ostream& operator<< (std::ostream &os, const \fBcl::Program\fP &program)"
+.PP
+Definition at line 438 of file OpenCLPrint.cpp.
+.SS "std::ostream& operator<< (std::ostream &os, const \fBcl::Kernel\fP &kernel)"
+.PP
+Definition at line 422 of file OpenCLPrint.cpp.
+.PP
+References cl::Kernel::getInfo().
+.SS "std::ostream& operator<< (std::ostream &os, const \fBcl::CommandQueue\fP &queue)"
+.PP
+Definition at line 408 of file OpenCLPrint.cpp.
+.PP
+References cl::CommandQueue::getInfo().
+.SS "std::ostream& operator<< (std::ostream &os, const \fBcl::Context\fP &context)"
+.PP
+Definition at line 379 of file OpenCLPrint.cpp.
+.PP
+References cl::Context::getInfo().
+.SS "std::ostream& operator<< (std::ostream &os, const std::vector< \fBcl::Device\fP > &devices)"
+.PP
+Definition at line 364 of file OpenCLPrint.cpp.
+.SS "std::ostream& operator<< (std::ostream &os, const \fBcl::Device\fP &device)"
+.PP
+Definition at line 354 of file OpenCLPrint.cpp.
+.PP
+References cl::Device::getInfo().
+.SS "std::ostream& operator<< (std::ostream &os, const std::vector< \fBcl::Platform\fP > &platforms)"
+.PP
+Definition at line 339 of file OpenCLPrint.cpp.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

@@ -1,0 +1,23 @@
+Source: cryo-opencl
+Priority: extra
+Maintainer: SevenMachines <SevenMachines@yahoo.co.uk>
+Build-Depends: debhelper (>= 7.0.50~), nvidia-current-dev
+Standards-Version: 3.9.1
+Section: libs
+Homepage: 
+#Vcs-Git: git://git.debian.org/collab-maint/cryo-opencl.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/cryo-opencl.git;a=summary
+
+Package: libcryo-opencl-dev
+Section: libdevel
+Architecture: any
+Depends: libcryo-opencl (= ${binary:Version})
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: libcryo-opencl
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, nvidia-current
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

@@ -1,0 +1,8 @@
+94c7a9ad17210dc1c95cc90517517855  usr/include/cryo/NullRunner.h
+41b25270713be88de9c0b92f9e1b1d56  usr/include/cryo/OpenCLManager.h
+bb6ac559fa982e7d4362f6c8c6aad2b5  usr/include/cryo/OpenCLPrint.h
+0321bf960cfb10ac50a59de01becdd61  usr/include/cryo/SimpleRunner.h
+79f369c41107b91ff92b453385f01092  usr/include/cryo/cl.hpp
+29e628676efff3e31eb4eb46e01af19f  usr/share/doc/libcryo-opencl-dev/README.Debian
+fd457df227b65f45ad89035fd7a34725  usr/share/doc/libcryo-opencl-dev/TODO
+b88da890a2a5aaabd3b912e89b3b708d  usr/share/doc/libcryo-opencl-dev/copyright

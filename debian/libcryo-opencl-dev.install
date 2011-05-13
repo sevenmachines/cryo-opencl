@@ -1,0 +1,3 @@
+src/*.h /usr/include/cryo
+src/runners/*.h /usr/include/cryo
+src/CL/* /usr/include/cryo

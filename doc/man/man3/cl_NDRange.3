@@ -1,0 +1,92 @@
+.TH "cl::NDRange" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::NDRange \- 
+.PP
+\fBNDRange\fP interface.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNDRange\fP ()"
+.br
+.ti -1c
+.RI "\fBNDRange\fP (::\fBsize_t\fP size0)"
+.br
+.ti -1c
+.RI "\fBNDRange\fP (::\fBsize_t\fP size0,::\fBsize_t\fP size1)"
+.br
+.ti -1c
+.RI "\fBNDRange\fP (::\fBsize_t\fP size0,::\fBsize_t\fP size1,::\fBsize_t\fP size2)"
+.br
+.ti -1c
+.RI "\fBoperator const ::size_t *\fP () const "
+.br
+.ti -1c
+.RI "::\fBsize_t\fP \fBdimensions\fP () const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsize_t\fP< 3 > \fBsizes_\fP"
+.br
+.ti -1c
+.RI "cl_uint \fBdimensions_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBNDRange\fP interface. 
+.PP
+Definition at line 2212 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cl::NDRange::NDRange ()\fC [inline]\fP"
+.PP
+Definition at line 2219 of file cl.hpp.
+.SS "cl::NDRange::NDRange (::\fBsize_t\fPsize0)\fC [inline]\fP"
+.PP
+Definition at line 2223 of file cl.hpp.
+.PP
+References cl::vector< T, N >::push_back().
+.SS "cl::NDRange::NDRange (::\fBsize_t\fPsize0, ::\fBsize_t\fPsize1)\fC [inline]\fP"
+.PP
+Definition at line 2229 of file cl.hpp.
+.PP
+References cl::vector< T, N >::push_back().
+.SS "cl::NDRange::NDRange (::\fBsize_t\fPsize0, ::\fBsize_t\fPsize1, ::\fBsize_t\fPsize2)\fC [inline]\fP"
+.PP
+Definition at line 2236 of file cl.hpp.
+.PP
+References cl::vector< T, N >::push_back().
+.SH "Member Function Documentation"
+.PP 
+.SS "::\fBsize_t\fP cl::NDRange::dimensions () const\fC [inline]\fP"
+.PP
+Definition at line 2245 of file cl.hpp.
+.PP
+Referenced by cl::CommandQueue::enqueueNDRangeKernel().
+.SS "cl::NDRange::operator const ::\fBsize_t\fP * () const\fC [inline]\fP"
+.PP
+Definition at line 2244 of file cl.hpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "cl_uint \fBcl::NDRange::dimensions_\fP\fC [private]\fP"
+.PP
+Definition at line 2216 of file cl.hpp.
+.SS "\fBsize_t\fP<3> \fBcl::NDRange::sizes_\fP\fC [private]\fP"
+.PP
+Definition at line 2215 of file cl.hpp.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

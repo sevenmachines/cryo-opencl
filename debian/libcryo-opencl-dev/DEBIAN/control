@@ -1,0 +1,11 @@
+Package: libcryo-opencl-dev
+Source: cryo-opencl
+Version: 0.1-1
+Architecture: amd64
+Maintainer: SevenMachines <SevenMachines@yahoo.co.uk>
+Installed-Size: 252
+Depends: libcryo-opencl (= 0.1-1)
+Section: libdevel
+Priority: extra
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

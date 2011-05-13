@@ -1,0 +1,11 @@
+Package: libcryo-opencl
+Source: cryo-opencl
+Version: 0.1-1
+Architecture: amd64
+Maintainer: SevenMachines <SevenMachines@yahoo.co.uk>
+Installed-Size: 152
+Depends: libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.4.0), nvidia-current
+Section: libs
+Priority: extra
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

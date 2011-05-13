@@ -1,0 +1,113 @@
+.TH "cl::detail::Wrapper" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::detail::Wrapper \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef T \fBcl_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWrapper\fP ()"
+.br
+.ti -1c
+.RI "\fB~Wrapper\fP ()"
+.br
+.ti -1c
+.RI "\fBWrapper\fP (const \fBWrapper\fP< \fBcl_type\fP > &rhs)"
+.br
+.ti -1c
+.RI "\fBWrapper\fP< \fBcl_type\fP > & \fBoperator=\fP (const \fBWrapper\fP< \fBcl_type\fP > &rhs)"
+.br
+.ti -1c
+.RI "\fBcl_type\fP \fBoperator()\fP () const "
+.br
+.ti -1c
+.RI "\fBcl_type\fP & \fBoperator()\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cl_int \fBretain\fP () const "
+.br
+.ti -1c
+.RI "cl_int \fBrelease\fP () const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcl_type\fP \fBobject_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename T> class cl::detail::Wrapper< T >"
+
+.PP
+Definition at line 1091 of file cl.hpp.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<typename T> typedef T \fBcl::detail::Wrapper\fP< T >::\fBcl_type\fP"
+.PP
+Definition at line 1094 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename T> \fBcl::detail::Wrapper\fP< T >::\fBWrapper\fP ()\fC [inline]\fP"
+.PP
+Definition at line 1100 of file cl.hpp.
+.SS "template<typename T> \fBcl::detail::Wrapper\fP< T >::~\fBWrapper\fP ()\fC [inline]\fP"
+.PP
+Definition at line 1102 of file cl.hpp.
+.SS "template<typename T> \fBcl::detail::Wrapper\fP< T >::\fBWrapper\fP (const \fBWrapper\fP< \fBcl_type\fP > &rhs)\fC [inline]\fP"
+.PP
+Definition at line 1107 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T> \fBcl_type\fP \fBcl::detail::Wrapper\fP< T >::operator() () const\fC [inline]\fP"
+.PP
+Definition at line 1121 of file cl.hpp.
+.SS "template<typename T> \fBcl_type\fP& \fBcl::detail::Wrapper\fP< T >::operator() ()\fC [inline]\fP"
+.PP
+Definition at line 1123 of file cl.hpp.
+.SS "template<typename T> \fBWrapper\fP<\fBcl_type\fP>& \fBcl::detail::Wrapper\fP< T >::operator= (const \fBWrapper\fP< \fBcl_type\fP > &rhs)\fC [inline]\fP"
+.PP
+Definition at line 1113 of file cl.hpp.
+.PP
+Referenced by cl::Program::operator=(), and cl::Event::operator=().
+.SS "template<typename T> cl_int \fBcl::detail::Wrapper\fP< T >::release () const\fC [inline, protected]\fP"
+.PP
+Definition at line 1132 of file cl.hpp.
+.PP
+Referenced by cl::detail::Wrapper< cl_platform_id >::operator=(), cl::detail::Wrapper< cl_platform_id >::release(), and cl::detail::Wrapper< cl_platform_id >::~Wrapper().
+.SS "template<typename T> cl_int \fBcl::detail::Wrapper\fP< T >::retain () const\fC [inline, protected]\fP"
+.PP
+Definition at line 1127 of file cl.hpp.
+.PP
+Referenced by cl::detail::Wrapper< cl_platform_id >::operator=(), cl::detail::Wrapper< cl_platform_id >::retain(), and cl::detail::Wrapper< cl_platform_id >::Wrapper().
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename T> \fBcl_type\fP \fBcl::detail::Wrapper\fP< T >::\fBobject_\fP\fC [protected]\fP"
+.PP
+Definition at line 1097 of file cl.hpp.
+.PP
+Referenced by cl::detail::Wrapper< cl_platform_id >::operator()(), cl::detail::Wrapper< cl_platform_id >::operator=(), cl::detail::Wrapper< cl_platform_id >::release(), cl::detail::Wrapper< cl_platform_id >::retain(), cl::detail::Wrapper< cl_platform_id >::Wrapper(), and cl::detail::Wrapper< cl_platform_id >::~Wrapper().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

@@ -1,0 +1,154 @@
+.TH "cl::Event" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::Event \- 
+.PP
+\fBEvent\fP interface for cl_event.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.PP
+Inherits \fBWrapper< cl_event >\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef cl_event \fBcl_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEvent\fP ()"
+.br
+.ti -1c
+.RI "\fBEvent\fP (const \fBEvent\fP &event)"
+.br
+.ti -1c
+.RI "\fBEvent\fP & \fBoperator=\fP (const \fBEvent\fP &rhs)"
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetInfo\fP (cl_event_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_event_info, name >::param_type \fBgetInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetProfilingInfo\fP (cl_profiling_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_profiling_info, name >::param_type \fBgetProfilingInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBwait\fP () const "
+.br
+.ti -1c
+.RI "\fBcl_type\fP \fBoperator()\fP () const"
+.br
+.ti -1c
+.RI "\fBcl_type\fP & \fBoperator()\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static cl_int \fBwaitForEvents\fP (const VECTOR_CLASS< \fBEvent\fP > &events)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cl_int \fBretain\fP () const"
+.br
+.ti -1c
+.RI "cl_int \fBrelease\fP () const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcl_type\fP \fBobject_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBEvent\fP interface for cl_event. 
+.PP
+Definition at line 1538 of file cl.hpp.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef cl_event  \fBcl::detail::Wrapper\fP< cl_event  >::\fBcl_type\fP\fC [inherited]\fP"
+.PP
+Definition at line 1094 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cl::Event::Event ()\fC [inline]\fP"
+.PP
+Definition at line 1541 of file cl.hpp.
+.SS "cl::Event::Event (const \fBEvent\fP &event)\fC [inline]\fP"
+.PP
+Definition at line 1543 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T > cl_int cl::Event::getInfo (cl_event_infoname, T *param) const\fC [inline]\fP"
+.PP
+Definition at line 1554 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::getInfo().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_event_info, name>::param_type cl::Event::getInfo (cl_int *err = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 1563 of file cl.hpp.
+.PP
+References cl::detail::getInfo().
+.SS "template<typename T > cl_int cl::Event::getProfilingInfo (cl_profiling_infoname, T *param) const\fC [inline]\fP"
+.PP
+Definition at line 1575 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::getInfo().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_profiling_info, name>::param_type cl::Event::getProfilingInfo (cl_int *err = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 1584 of file cl.hpp.
+.SS "\fBcl_type\fP& \fBcl::detail::Wrapper\fP< cl_event  >::operator() ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 1123 of file cl.hpp.
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_event  >::operator() () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1121 of file cl.hpp.
+.SS "\fBEvent\fP& cl::Event::operator= (const \fBEvent\fP &rhs)\fC [inline]\fP"
+.PP
+Definition at line 1545 of file cl.hpp.
+.PP
+References cl::detail::Wrapper< T >::operator=().
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_event  >::release () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1132 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_event  >::retain () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1127 of file cl.hpp.
+.SS "cl_int cl::Event::wait () const\fC [inline]\fP"
+.PP
+Definition at line 1595 of file cl.hpp.
+.PP
+References cl::detail::errHandler().
+.SS "static cl_int cl::Event::waitForEvents (const VECTOR_CLASS< \fBEvent\fP > &events)\fC [inline, static]\fP"
+.PP
+Definition at line 1619 of file cl.hpp.
+.PP
+References cl::detail::errHandler().
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_event  >::\fBobject_\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 1097 of file cl.hpp.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

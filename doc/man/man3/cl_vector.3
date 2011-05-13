@@ -1,0 +1,224 @@
+.TH "cl::vector" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::vector \- 
+.PP
+Fixed sized vector implementation that mirroring std::vector functionality.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBiterator\fP"
+.br
+.RI "\fIIterator class for vectors. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvector\fP ()"
+.br
+.ti -1c
+.RI "\fB~vector\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBsize\fP (void) const "
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "void \fBpush_back\fP (const T &x)"
+.br
+.ti -1c
+.RI "void \fBpop_back\fP (void)"
+.br
+.ti -1c
+.RI "\fBvector\fP (const \fBvector\fP< T, N > &vec)"
+.br
+.ti -1c
+.RI "\fBvector\fP (unsigned int size, const T &val=T())"
+.br
+.ti -1c
+.RI "\fBvector\fP< T, N > & \fBoperator=\fP (const \fBvector\fP< T, N > &rhs)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBvector\fP< T, N > &vec)"
+.br
+.ti -1c
+.RI "\fBoperator T *\fP ()"
+.br
+.ti -1c
+.RI "\fBoperator const T *\fP () const "
+.br
+.ti -1c
+.RI "bool \fBempty\fP (void) const "
+.br
+.ti -1c
+.RI "unsigned int \fBmax_size\fP (void) const "
+.br
+.ti -1c
+.RI "unsigned int \fBcapacity\fP () const "
+.br
+.ti -1c
+.RI "T & \fBoperator[]\fP (int index)"
+.br
+.ti -1c
+.RI "T \fBoperator[]\fP (int index) const "
+.br
+.ti -1c
+.RI "template<class I > void \fBassign\fP (I start, I end)"
+.br
+.ti -1c
+.RI "\fBiterator\fP \fBbegin\fP (void)"
+.br
+.ti -1c
+.RI "\fBiterator\fP \fBend\fP (void)"
+.br
+.ti -1c
+.RI "T & \fBfront\fP (void)"
+.br
+.ti -1c
+.RI "T & \fBback\fP (void)"
+.br
+.ti -1c
+.RI "const T & \fBfront\fP (void) const "
+.br
+.ti -1c
+.RI "const T & \fBback\fP (void) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "T \fBdata_\fP [N]"
+.br
+.ti -1c
+.RI "unsigned int \fBsize_\fP"
+.br
+.ti -1c
+.RI "bool \fBempty_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> class cl::vector< T, N >"
+Fixed sized vector implementation that mirroring std::vector functionality. 
+.PP
+Definition at line 434 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> \fBcl::vector\fP< T, N >::\fBvector\fP ()\fC [inline]\fP"
+.PP
+Definition at line 441 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> \fBcl::vector\fP< T, N >::~\fBvector\fP ()\fC [inline]\fP"
+.PP
+Definition at line 446 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> \fBcl::vector\fP< T, N >::\fBvector\fP (const \fBvector\fP< T, N > &vec)\fC [inline]\fP"
+.PP
+Definition at line 479 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> \fBcl::vector\fP< T, N >::\fBvector\fP (unsigned intsize, const T &val = \fCT()\fP)\fC [inline]\fP"
+.PP
+Definition at line 488 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> template<class I > void \fBcl::vector\fP< T, N >::assign (Istart, Iend)\fC [inline]\fP"
+.PP
+Definition at line 555 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> T& \fBcl::vector\fP< T, N >::back (void)\fC [inline]\fP"
+.PP
+Definition at line 662 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> const T& \fBcl::vector\fP< T, N >::back (void) const\fC [inline]\fP"
+.PP
+Definition at line 672 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> \fBiterator\fP \fBcl::vector\fP< T, N >::begin (void)\fC [inline]\fP"
+.PP
+Definition at line 647 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> unsigned int \fBcl::vector\fP< T, N >::capacity () const\fC [inline]\fP"
+.PP
+Definition at line 539 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> void \fBcl::vector\fP< T, N >::clear ()\fC [inline]\fP"
+.PP
+Definition at line 453 of file cl.hpp.
+.PP
+Referenced by cl::vector< ::size_t, N >::assign().
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> bool \fBcl::vector\fP< T, N >::empty (void) const\fC [inline]\fP"
+.PP
+Definition at line 529 of file cl.hpp.
+.PP
+Referenced by cl::vector< T, N >::iterator::begin(), and cl::vector< T, N >::iterator::end().
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> \fBiterator\fP \fBcl::vector\fP< T, N >::end (void)\fC [inline]\fP"
+.PP
+Definition at line 652 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> T& \fBcl::vector\fP< T, N >::front (void)\fC [inline]\fP"
+.PP
+Definition at line 657 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> const T& \fBcl::vector\fP< T, N >::front (void) const\fC [inline]\fP"
+.PP
+Definition at line 667 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> unsigned int \fBcl::vector\fP< T, N >::max_size (void) const\fC [inline]\fP"
+.PP
+Definition at line 534 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> \fBcl::vector\fP< T, N >::operator const T * () const\fC [inline]\fP"
+.PP
+Definition at line 527 of file cl.hpp.
+.PP
+References cl::vector< T, N >::data_.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> \fBcl::vector\fP< T, N >::operator T * ()\fC [inline]\fP"
+.PP
+Definition at line 526 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> \fBvector\fP<T, N>& \fBcl::vector\fP< T, N >::operator= (const \fBvector\fP< T, N > &rhs)\fC [inline]\fP"
+.PP
+Definition at line 497 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> bool \fBcl::vector\fP< T, N >::operator== (\fBvector\fP< T, N > &vec)\fC [inline]\fP"
+.PP
+Definition at line 513 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> T \fBcl::vector\fP< T, N >::operator[] (intindex) const\fC [inline]\fP"
+.PP
+Definition at line 549 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> T& \fBcl::vector\fP< T, N >::operator[] (intindex)\fC [inline]\fP"
+.PP
+Definition at line 544 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> void \fBcl::vector\fP< T, N >::pop_back (void)\fC [inline]\fP"
+.PP
+Definition at line 468 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> void \fBcl::vector\fP< T, N >::push_back (const T &x)\fC [inline]\fP"
+.PP
+Definition at line 459 of file cl.hpp.
+.PP
+Referenced by cl::vector< ::size_t, N >::assign(), cl::NDRange::NDRange(), and cl::vector< ::size_t, N >::vector().
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> unsigned int \fBcl::vector\fP< T, N >::size (void) const\fC [inline]\fP"
+.PP
+Definition at line 448 of file cl.hpp.
+.PP
+Referenced by cl::vector< T, N >::iterator::end(), cl::CommandQueue::enqueueCopyBuffer(), cl::CommandQueue::enqueueCopyBufferToImage(), cl::CommandQueue::enqueueCopyImage(), cl::CommandQueue::enqueueCopyImageToBuffer(), cl::CommandQueue::enqueueMapBuffer(), cl::CommandQueue::enqueueMapImage(), cl::CommandQueue::enqueueReadBuffer(), cl::CommandQueue::enqueueReadImage(), cl::CommandQueue::enqueueWriteBuffer(), cl::CommandQueue::enqueueWriteImage(), cl::vector< ::size_t, N >::operator==(), cl::vector< ::size_t, N >::push_back(), and cl::vector< ::size_t, N >::vector().
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> T \fBcl::vector\fP< T, N >::\fBdata_\fP[N]\fC [private]\fP"
+.PP
+Definition at line 437 of file cl.hpp.
+.PP
+Referenced by cl::vector< ::size_t, N >::back(), cl::vector< ::size_t, N >::front(), cl::vector< T, N >::operator const T *(), cl::vector< ::size_t, N >::operator::size_t *(), cl::vector< ::size_t, N >::operator=(), cl::vector< ::size_t, N >::operator==(), cl::vector< ::size_t, N >::operator[](), cl::vector< ::size_t, N >::pop_back(), cl::vector< ::size_t, N >::push_back(), and cl::vector< ::size_t, N >::vector().
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> bool \fBcl::vector\fP< T, N >::\fBempty_\fP\fC [private]\fP"
+.PP
+Definition at line 439 of file cl.hpp.
+.PP
+Referenced by cl::vector< ::size_t, N >::clear(), cl::vector< ::size_t, N >::empty(), cl::vector< ::size_t, N >::operator=(), cl::vector< ::size_t, N >::operator==(), cl::vector< ::size_t, N >::pop_back(), cl::vector< ::size_t, N >::push_back(), and cl::vector< ::size_t, N >::vector().
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> unsigned int \fBcl::vector\fP< T, N >::\fBsize_\fP\fC [private]\fP"
+.PP
+Definition at line 438 of file cl.hpp.
+.PP
+Referenced by cl::vector< ::size_t, N >::back(), cl::vector< ::size_t, N >::clear(), cl::vector< ::size_t, N >::operator=(), cl::vector< ::size_t, N >::pop_back(), cl::vector< ::size_t, N >::push_back(), and cl::vector< ::size_t, N >::size().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

@@ -1,0 +1,122 @@
+.TH "cl::string" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::string \- 
+.PP
+Simple string class, that provides a limited subset of std::string functionality but avoids many of the issues that come with that class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP (void)"
+.br
+.ti -1c
+.RI "\fBstring\fP (char *str,::\fBsize_t\fP size)"
+.br
+.ti -1c
+.RI "\fBstring\fP (char *str)"
+.br
+.ti -1c
+.RI "\fBstring\fP & \fBoperator=\fP (const \fBstring\fP &rhs)"
+.br
+.ti -1c
+.RI "\fBstring\fP (const \fBstring\fP &rhs)"
+.br
+.ti -1c
+.RI "\fB~string\fP ()"
+.br
+.ti -1c
+.RI "::\fBsize_t\fP \fBsize\fP (void) const "
+.br
+.ti -1c
+.RI "::\fBsize_t\fP \fBlength\fP (void) const "
+.br
+.ti -1c
+.RI "const char * \fBc_str\fP (void) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "::\fBsize_t\fP \fBsize_\fP"
+.br
+.ti -1c
+.RI "char * \fBstr_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Simple string class, that provides a limited subset of std::string functionality but avoids many of the issues that come with that class. 
+.PP
+Definition at line 332 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cl::string::string (void)\fC [inline]\fP"
+.PP
+Definition at line 338 of file cl.hpp.
+.SS "cl::string::string (char *str, ::\fBsize_t\fPsize)\fC [inline]\fP"
+.PP
+Definition at line 342 of file cl.hpp.
+.PP
+References size_, and str_.
+.SS "cl::string::string (char *str)\fC [inline]\fP"
+.PP
+Definition at line 356 of file cl.hpp.
+.PP
+References size_, and str_.
+.SS "cl::string::string (const \fBstring\fP &rhs)\fC [inline]\fP"
+.PP
+Definition at line 393 of file cl.hpp.
+.SS "cl::string::~string ()\fC [inline]\fP"
+.PP
+Definition at line 398 of file cl.hpp.
+.PP
+References str_.
+.SH "Member Function Documentation"
+.PP 
+.SS "const char* cl::string::c_str (void) const\fC [inline]\fP"
+.PP
+Definition at line 408 of file cl.hpp.
+.PP
+References str_.
+.SS "::\fBsize_t\fP cl::string::length (void) const\fC [inline]\fP"
+.PP
+Definition at line 406 of file cl.hpp.
+.PP
+References size().
+.SS "\fBstring\fP& cl::string::operator= (const \fBstring\fP &rhs)\fC [inline]\fP"
+.PP
+Definition at line 369 of file cl.hpp.
+.PP
+References size_, and str_.
+.SS "::\fBsize_t\fP cl::string::size (void) const\fC [inline]\fP"
+.PP
+Definition at line 405 of file cl.hpp.
+.PP
+References size_.
+.PP
+Referenced by length().
+.SH "Member Data Documentation"
+.PP 
+.SS "::\fBsize_t\fP \fBcl::string::size_\fP\fC [private]\fP"
+.PP
+Definition at line 335 of file cl.hpp.
+.PP
+Referenced by operator=(), size(), and string().
+.SS "char* \fBcl::string::str_\fP\fC [private]\fP"
+.PP
+Definition at line 336 of file cl.hpp.
+.PP
+Referenced by c_str(), operator=(), string(), and ~string().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

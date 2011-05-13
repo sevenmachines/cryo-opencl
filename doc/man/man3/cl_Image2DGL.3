@@ -1,0 +1,148 @@
+.TH "cl::Image2DGL" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::Image2DGL \- 
+.PP
+2D image interface for GL interop.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.PP
+Inherits \fBcl::Image2D\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef cl_mem \fBcl_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImage2DGL\fP (const \fBContext\fP &context, cl_mem_flags flags, GLenum target, GLint miplevel, GLuint texobj, cl_int *err=NULL)"
+.br
+.ti -1c
+.RI "\fBImage2DGL\fP ()"
+.br
+.ti -1c
+.RI "\fBImage2DGL\fP (const \fBImage2DGL\fP &image)"
+.br
+.ti -1c
+.RI "\fBImage2DGL\fP & \fBoperator=\fP (const \fBImage2DGL\fP &rhs)"
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetImageInfo\fP (cl_image_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_image_info, name >::param_type \fBgetImageInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetInfo\fP (cl_mem_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_mem_info, name >::param_type \fBgetInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "\fBcl_type\fP \fBoperator()\fP () const"
+.br
+.ti -1c
+.RI "\fBcl_type\fP & \fBoperator()\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cl_int \fBretain\fP () const"
+.br
+.ti -1c
+.RI "cl_int \fBrelease\fP () const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcl_type\fP \fBobject_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+2D image interface for GL interop. 
+.PP
+Definition at line 2019 of file cl.hpp.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef cl_mem  \fBcl::detail::Wrapper\fP< cl_mem  >::\fBcl_type\fP\fC [inherited]\fP"
+.PP
+Definition at line 1094 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cl::Image2DGL::Image2DGL (const \fBContext\fP &context, cl_mem_flagsflags, GLenumtarget, GLintmiplevel, GLuinttexobj, cl_int *err = \fCNULL\fP)\fC [inline]\fP"
+.PP
+Definition at line 2022 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_mem >::object_.
+.SS "cl::Image2DGL::Image2DGL ()\fC [inline]\fP"
+.PP
+Definition at line 2045 of file cl.hpp.
+.SS "cl::Image2DGL::Image2DGL (const \fBImage2DGL\fP &image)\fC [inline]\fP"
+.PP
+Definition at line 2047 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T > cl_int cl::Image::getImageInfo (cl_image_infoname, T *param) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1956 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::getInfo(), and cl::detail::Wrapper< cl_mem >::object_.
+.PP
+Referenced by cl::Image::getImageInfo().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_image_info, name>::param_type cl::Image::getImageInfo (cl_int *err = \fCNULL\fP) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1965 of file cl.hpp.
+.PP
+References cl::Image::getImageInfo().
+.SS "template<typename T > cl_int cl::Memory::getInfo (cl_mem_infoname, T *param) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1701 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::getInfo(), and cl::detail::Wrapper< cl_mem >::object_.
+.PP
+Referenced by cl::Memory::getInfo().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_mem_info, name>::param_type cl::Memory::getInfo (cl_int *err = \fCNULL\fP) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1710 of file cl.hpp.
+.PP
+References cl::Memory::getInfo().
+.SS "\fBcl_type\fP& \fBcl::detail::Wrapper\fP< cl_mem  >::operator() ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 1123 of file cl.hpp.
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_mem  >::operator() () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1121 of file cl.hpp.
+.SS "\fBImage2DGL\fP& cl::Image2DGL::operator= (const \fBImage2DGL\fP &rhs)\fC [inline]\fP"
+.PP
+Definition at line 2049 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_mem  >::release () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1132 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_mem  >::retain () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1127 of file cl.hpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_mem  >::\fBobject_\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 1097 of file cl.hpp.
+.PP
+Referenced by cl::BufferGL::BufferGL(), cl::BufferRenderGL::BufferRenderGL(), cl::Image::getImageInfo(), cl::Memory::getInfo(), cl::BufferRenderGL::getObjectInfo(), cl::BufferGL::getObjectInfo(), cl::Image2D::Image2D(), Image2DGL(), cl::Image3D::Image3D(), and cl::Image3DGL::Image3DGL().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

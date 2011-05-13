@@ -1,0 +1,141 @@
+.TH "cl::Context" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::Context \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.PP
+Inherits \fBWrapper< cl_context >\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef cl_context \fBcl_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBContext\fP (const VECTOR_CLASS< \fBDevice\fP > &devices, cl_context_properties *properties=NULL, void(CL_CALLBACK *notifyFptr)(const char *, const void *,::\fBsize_t\fP, void *)=NULL, void *data=NULL, cl_int *err=NULL)"
+.br
+.ti -1c
+.RI "\fBContext\fP (cl_device_type type, cl_context_properties *properties=NULL, void(CL_CALLBACK *notifyFptr)(const char *, const void *,::\fBsize_t\fP, void *)=NULL, void *data=NULL, cl_int *err=NULL)"
+.br
+.ti -1c
+.RI "\fBContext\fP ()"
+.br
+.ti -1c
+.RI "\fBContext\fP (const \fBContext\fP &context)"
+.br
+.ti -1c
+.RI "\fBContext\fP & \fBoperator=\fP (const \fBContext\fP &rhs)"
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetInfo\fP (cl_context_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_context_info, name >::param_type \fBgetInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBgetSupportedImageFormats\fP (cl_mem_flags flags, cl_mem_object_type type, VECTOR_CLASS< \fBImageFormat\fP > *formats) const "
+.br
+.ti -1c
+.RI "\fBcl_type\fP \fBoperator()\fP () const"
+.br
+.ti -1c
+.RI "\fBcl_type\fP & \fBoperator()\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cl_int \fBretain\fP () const"
+.br
+.ti -1c
+.RI "cl_int \fBrelease\fP () const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcl_type\fP \fBobject_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 1418 of file cl.hpp.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef cl_context  \fBcl::detail::Wrapper\fP< cl_context  >::\fBcl_type\fP\fC [inherited]\fP"
+.PP
+Definition at line 1094 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cl::Context::Context (const VECTOR_CLASS< \fBDevice\fP > &devices, cl_context_properties *properties = \fCNULL\fP, void(CL_CALLBACK *notifyFptr)(const char *,const void *,::\fBsize_t\fP,void *) = \fCNULL\fP, void *data = \fCNULL\fP, cl_int *err = \fCNULL\fP)\fC [inline]\fP"
+.PP
+Definition at line 1421 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_context >::object_.
+.SS "cl::Context::Context (cl_device_typetype, cl_context_properties *properties = \fCNULL\fP, void(CL_CALLBACK *notifyFptr)(const char *,const void *,::\fBsize_t\fP,void *) = \fCNULL\fP, void *data = \fCNULL\fP, cl_int *err = \fCNULL\fP)\fC [inline]\fP"
+.PP
+Definition at line 1444 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_context >::object_.
+.SS "cl::Context::Context ()\fC [inline]\fP"
+.PP
+Definition at line 1465 of file cl.hpp.
+.SS "cl::Context::Context (const \fBContext\fP &context)\fC [inline]\fP"
+.PP
+Definition at line 1467 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T > cl_int cl::Context::getInfo (cl_context_infoname, T *param) const\fC [inline]\fP"
+.PP
+Definition at line 1478 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::getInfo(), and cl::detail::Wrapper< cl_context >::object_.
+.PP
+Referenced by getInfo(), and operator<<().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_context_info, name>::param_type cl::Context::getInfo (cl_int *err = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 1487 of file cl.hpp.
+.PP
+References getInfo().
+.SS "cl_int cl::Context::getSupportedImageFormats (cl_mem_flagsflags, cl_mem_object_typetype, VECTOR_CLASS< \fBImageFormat\fP > *formats) const\fC [inline]\fP"
+.PP
+Definition at line 1498 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_context >::object_.
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_context  >::operator() () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1121 of file cl.hpp.
+.SS "\fBcl_type\fP& \fBcl::detail::Wrapper\fP< cl_context  >::operator() ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 1123 of file cl.hpp.
+.SS "\fBContext\fP& cl::Context::operator= (const \fBContext\fP &rhs)\fC [inline]\fP"
+.PP
+Definition at line 1469 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_context  >::release () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1132 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_context  >::retain () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1127 of file cl.hpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_context  >::\fBobject_\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 1097 of file cl.hpp.
+.PP
+Referenced by Context(), getInfo(), and getSupportedImageFormats().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

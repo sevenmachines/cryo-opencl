@@ -1,0 +1,130 @@
+.TH "cl::Sampler" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::Sampler \- 
+.PP
+\fBSampler\fP interface for cl_sampler.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.PP
+Inherits \fBWrapper< cl_sampler >\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef cl_sampler \fBcl_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSampler\fP ()"
+.br
+.ti -1c
+.RI "\fBSampler\fP (const \fBContext\fP &context, cl_bool normalized_coords, cl_addressing_mode addressing_mode, cl_filter_mode filter_mode, cl_int *err=NULL)"
+.br
+.ti -1c
+.RI "\fBSampler\fP (const \fBSampler\fP &sampler)"
+.br
+.ti -1c
+.RI "\fBSampler\fP & \fBoperator=\fP (const \fBSampler\fP &rhs)"
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetInfo\fP (cl_sampler_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_sampler_info, name >::param_type \fBgetInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "\fBcl_type\fP \fBoperator()\fP () const"
+.br
+.ti -1c
+.RI "\fBcl_type\fP & \fBoperator()\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cl_int \fBretain\fP () const"
+.br
+.ti -1c
+.RI "cl_int \fBrelease\fP () const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcl_type\fP \fBobject_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBSampler\fP interface for cl_sampler. 
+.PP
+Definition at line 2145 of file cl.hpp.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef cl_sampler  \fBcl::detail::Wrapper\fP< cl_sampler  >::\fBcl_type\fP\fC [inherited]\fP"
+.PP
+Definition at line 1094 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cl::Sampler::Sampler ()\fC [inline]\fP"
+.PP
+Definition at line 2148 of file cl.hpp.
+.SS "cl::Sampler::Sampler (const \fBContext\fP &context, cl_boolnormalized_coords, cl_addressing_modeaddressing_mode, cl_filter_modefilter_mode, cl_int *err = \fCNULL\fP)\fC [inline]\fP"
+.PP
+Definition at line 2150 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_sampler >::object_.
+.SS "cl::Sampler::Sampler (const \fBSampler\fP &sampler)\fC [inline]\fP"
+.PP
+Definition at line 2171 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T > cl_int cl::Sampler::getInfo (cl_sampler_infoname, T *param) const\fC [inline]\fP"
+.PP
+Definition at line 2182 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::getInfo(), and cl::detail::Wrapper< cl_sampler >::object_.
+.PP
+Referenced by getInfo().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_sampler_info, name>::param_type cl::Sampler::getInfo (cl_int *err = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2191 of file cl.hpp.
+.PP
+References getInfo().
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_sampler  >::operator() () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1121 of file cl.hpp.
+.SS "\fBcl_type\fP& \fBcl::detail::Wrapper\fP< cl_sampler  >::operator() ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 1123 of file cl.hpp.
+.SS "\fBSampler\fP& cl::Sampler::operator= (const \fBSampler\fP &rhs)\fC [inline]\fP"
+.PP
+Definition at line 2173 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_sampler  >::release () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1132 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_sampler  >::retain () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1127 of file cl.hpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_sampler  >::\fBobject_\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 1097 of file cl.hpp.
+.PP
+Referenced by getInfo(), and Sampler().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

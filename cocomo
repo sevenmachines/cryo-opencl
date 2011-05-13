@@ -1,0 +1,39 @@
+Creating filelist for CL
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/niall/Projects/Eclipse/cryo-opencl/src//OpenCLManager.cpp to top_dir
+Adding /home/niall/Projects/Eclipse/cryo-opencl/src//OpenCLManager.h to top_dir
+Adding /home/niall/Projects/Eclipse/cryo-opencl/src//OpenCLPrint.cpp to top_dir
+Adding /home/niall/Projects/Eclipse/cryo-opencl/src//OpenCLPrint.h to top_dir
+Creating filelist for runners
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+3269    CL              cpp=3269
+430     top_dir         cpp=430
+123     runners         cpp=123
+
+
+Totals grouped by language (dominant language first):
+cpp:           3822 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 3,822
+Development Effort Estimate, Person-Years (Person-Months) = 0.82 (9.81)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.50 (5.95)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 1.65
+Total Estimated Cost to Develop                           = $ 110,420
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."

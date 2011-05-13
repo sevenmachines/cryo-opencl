@@ -1,0 +1,300 @@
+.TH "cl::CommandQueue" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::CommandQueue \- 
+.PP
+\fBCommandQueue\fP interface for cl_command_queue.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.PP
+Inherits \fBWrapper< cl_command_queue >\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef cl_command_queue \fBcl_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCommandQueue\fP (const \fBContext\fP &context, const \fBDevice\fP &device, cl_command_queue_properties properties=0, cl_int *err=NULL)"
+.br
+.ti -1c
+.RI "\fBCommandQueue\fP ()"
+.br
+.ti -1c
+.RI "\fBCommandQueue\fP (const \fBCommandQueue\fP &commandQueue)"
+.br
+.ti -1c
+.RI "\fBCommandQueue\fP & \fBoperator=\fP (const \fBCommandQueue\fP &rhs)"
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetInfo\fP (cl_command_queue_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_command_queue_info, name >::param_type \fBgetInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueReadBuffer\fP (const \fBBuffer\fP &buffer, cl_bool blocking,::\fBsize_t\fP offset,::\fBsize_t\fP size, void *ptr, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueWriteBuffer\fP (const \fBBuffer\fP &buffer, cl_bool blocking,::\fBsize_t\fP offset,::\fBsize_t\fP size, const void *ptr, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueCopyBuffer\fP (const \fBBuffer\fP &src, const \fBBuffer\fP &dst,::\fBsize_t\fP src_offset,::\fBsize_t\fP dst_offset,::\fBsize_t\fP size, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueReadImage\fP (const \fBImage\fP &image, cl_bool blocking, const \fBsize_t\fP< 3 > &origin, const \fBsize_t\fP< 3 > &region,::\fBsize_t\fP row_pitch,::\fBsize_t\fP slice_pitch, void *ptr, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueWriteImage\fP (const \fBImage\fP &image, cl_bool blocking, const \fBsize_t\fP< 3 > &origin, const \fBsize_t\fP< 3 > &region,::\fBsize_t\fP row_pitch,::\fBsize_t\fP slice_pitch, void *ptr, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueCopyImage\fP (const \fBImage\fP &src, const \fBImage\fP &dst, const \fBsize_t\fP< 3 > &src_origin, const \fBsize_t\fP< 3 > &dst_origin, const \fBsize_t\fP< 3 > &region, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueCopyImageToBuffer\fP (const \fBImage\fP &src, const \fBBuffer\fP &dst, const \fBsize_t\fP< 3 > &src_origin, const \fBsize_t\fP< 3 > &region,::\fBsize_t\fP dst_offset, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueCopyBufferToImage\fP (const \fBBuffer\fP &src, const \fBImage\fP &dst,::\fBsize_t\fP src_offset, const \fBsize_t\fP< 3 > &dst_origin, const \fBsize_t\fP< 3 > &region, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "void * \fBenqueueMapBuffer\fP (const \fBBuffer\fP &buffer, cl_bool blocking, cl_map_flags flags,::\fBsize_t\fP offset,::\fBsize_t\fP size, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL, cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "void * \fBenqueueMapImage\fP (const \fBImage\fP &buffer, cl_bool blocking, cl_map_flags flags, const \fBsize_t\fP< 3 > &origin, const \fBsize_t\fP< 3 > &region,::\fBsize_t\fP *row_pitch,::\fBsize_t\fP *slice_pitch, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL, cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueUnmapMemObject\fP (const \fBMemory\fP &memory, void *mapped_ptr, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueNDRangeKernel\fP (const \fBKernel\fP &kernel, const \fBNDRange\fP &offset, const \fBNDRange\fP &global, const \fBNDRange\fP &local, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueTask\fP (const \fBKernel\fP &kernel, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueNativeKernel\fP (void(*userFptr)(void *), std::pair< void *,::\fBsize_t\fP > args, const VECTOR_CLASS< \fBMemory\fP > *mem_objects=NULL, const VECTOR_CLASS< const void * > *mem_locs=NULL, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueMarker\fP (\fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueWaitForEvents\fP (const VECTOR_CLASS< \fBEvent\fP > &events) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueAcquireGLObjects\fP (const VECTOR_CLASS< \fBMemory\fP > *mem_objects=NULL, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueReleaseGLObjects\fP (const VECTOR_CLASS< \fBMemory\fP > *mem_objects=NULL, const VECTOR_CLASS< \fBEvent\fP > *events=NULL, \fBEvent\fP *event=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBenqueueBarrier\fP () const "
+.br
+.ti -1c
+.RI "cl_int \fBflush\fP () const "
+.br
+.ti -1c
+.RI "cl_int \fBfinish\fP () const "
+.br
+.ti -1c
+.RI "\fBcl_type\fP \fBoperator()\fP () const"
+.br
+.ti -1c
+.RI "\fBcl_type\fP & \fBoperator()\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cl_int \fBretain\fP () const"
+.br
+.ti -1c
+.RI "cl_int \fBrelease\fP () const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcl_type\fP \fBobject_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBCommandQueue\fP interface for cl_command_queue. 
+.PP
+Definition at line 2560 of file cl.hpp.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef cl_command_queue  \fBcl::detail::Wrapper\fP< cl_command_queue  >::\fBcl_type\fP\fC [inherited]\fP"
+.PP
+Definition at line 1094 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cl::CommandQueue::CommandQueue (const \fBContext\fP &context, const \fBDevice\fP &device, cl_command_queue_propertiesproperties = \fC0\fP, cl_int *err = \fCNULL\fP)\fC [inline]\fP"
+.PP
+Definition at line 2563 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.SS "cl::CommandQueue::CommandQueue ()\fC [inline]\fP"
+.PP
+Definition at line 2579 of file cl.hpp.
+.SS "cl::CommandQueue::CommandQueue (const \fBCommandQueue\fP &commandQueue)\fC [inline]\fP"
+.PP
+Definition at line 2581 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "cl_int cl::CommandQueue::enqueueAcquireGLObjects (const VECTOR_CLASS< \fBMemory\fP > *mem_objects = \fCNULL\fP, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 3018 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.SS "cl_int cl::CommandQueue::enqueueBarrier () const\fC [inline]\fP"
+.PP
+Definition at line 3099 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.SS "cl_int cl::CommandQueue::enqueueCopyBuffer (const \fBBuffer\fP &src, const \fBBuffer\fP &dst, ::\fBsize_t\fPsrc_offset, ::\fBsize_t\fPdst_offset, ::\fBsize_t\fPsize, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2651 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::Wrapper< cl_command_queue >::object_, and cl::vector< T, N >::size().
+.SS "cl_int cl::CommandQueue::enqueueCopyBufferToImage (const \fBBuffer\fP &src, const \fBImage\fP &dst, ::\fBsize_t\fPsrc_offset, const \fBsize_t\fP< 3 > &dst_origin, const \fBsize_t\fP< 3 > &region, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2849 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::Wrapper< cl_command_queue >::object_, and cl::vector< T, N >::size().
+.SS "cl_int cl::CommandQueue::enqueueCopyImage (const \fBImage\fP &src, const \fBImage\fP &dst, const \fBsize_t\fP< 3 > &src_origin, const \fBsize_t\fP< 3 > &dst_origin, const \fBsize_t\fP< 3 > &region, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2811 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::Wrapper< cl_command_queue >::object_, and cl::vector< T, N >::size().
+.SS "cl_int cl::CommandQueue::enqueueCopyImageToBuffer (const \fBImage\fP &src, const \fBBuffer\fP &dst, const \fBsize_t\fP< 3 > &src_origin, const \fBsize_t\fP< 3 > &region, ::\fBsize_t\fPdst_offset, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2830 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::Wrapper< cl_command_queue >::object_, and cl::vector< T, N >::size().
+.SS "void* cl::CommandQueue::enqueueMapBuffer (const \fBBuffer\fP &buffer, cl_boolblocking, cl_map_flagsflags, ::\fBsize_t\fPoffset, ::\fBsize_t\fPsize, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP, cl_int *err = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2868 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::Wrapper< cl_command_queue >::object_, and cl::vector< T, N >::size().
+.SS "void* cl::CommandQueue::enqueueMapImage (const \fBImage\fP &buffer, cl_boolblocking, cl_map_flagsflags, const \fBsize_t\fP< 3 > &origin, const \fBsize_t\fP< 3 > &region, ::\fBsize_t\fP *row_pitch, ::\fBsize_t\fP *slice_pitch, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP, cl_int *err = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2893 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::Wrapper< cl_command_queue >::object_, and cl::vector< T, N >::size().
+.SS "cl_int cl::CommandQueue::enqueueMarker (\fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 3001 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.SS "cl_int cl::CommandQueue::enqueueNativeKernel (void(*)(void *)userFptr, std::pair< void *,::\fBsize_t\fP >args, const VECTOR_CLASS< \fBMemory\fP > *mem_objects = \fCNULL\fP, const VECTOR_CLASS< const void * > *mem_locs = \fCNULL\fP, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2971 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.SS "cl_int cl::CommandQueue::enqueueNDRangeKernel (const \fBKernel\fP &kernel, const \fBNDRange\fP &offset, const \fBNDRange\fP &global, const \fBNDRange\fP &local, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2937 of file cl.hpp.
+.PP
+References cl::NDRange::dimensions(), cl::detail::errHandler(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.PP
+Referenced by cl::KernelFunctor::operator()().
+.SS "cl_int cl::CommandQueue::enqueueReadBuffer (const \fBBuffer\fP &buffer, cl_boolblocking, ::\fBsize_t\fPoffset, ::\fBsize_t\fPsize, void *ptr, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2613 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::Wrapper< cl_command_queue >::object_, and cl::vector< T, N >::size().
+.SS "cl_int cl::CommandQueue::enqueueReadImage (const \fBImage\fP &image, cl_boolblocking, const \fBsize_t\fP< 3 > &origin, const \fBsize_t\fP< 3 > &region, ::\fBsize_t\fProw_pitch, ::\fBsize_t\fPslice_pitch, void *ptr, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2769 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::Wrapper< cl_command_queue >::object_, and cl::vector< T, N >::size().
+.SS "cl_int cl::CommandQueue::enqueueReleaseGLObjects (const VECTOR_CLASS< \fBMemory\fP > *mem_objects = \fCNULL\fP, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 3034 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.SS "cl_int cl::CommandQueue::enqueueTask (const \fBKernel\fP &kernel, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2957 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.SS "cl_int cl::CommandQueue::enqueueUnmapMemObject (const \fBMemory\fP &memory, void *mapped_ptr, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2922 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.SS "cl_int cl::CommandQueue::enqueueWaitForEvents (const VECTOR_CLASS< \fBEvent\fP > &events) const\fC [inline]\fP"
+.PP
+Definition at line 3008 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.SS "cl_int cl::CommandQueue::enqueueWriteBuffer (const \fBBuffer\fP &buffer, cl_boolblocking, ::\fBsize_t\fPoffset, ::\fBsize_t\fPsize, const void *ptr, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2632 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::Wrapper< cl_command_queue >::object_, and cl::vector< T, N >::size().
+.SS "cl_int cl::CommandQueue::enqueueWriteImage (const \fBImage\fP &image, cl_boolblocking, const \fBsize_t\fP< 3 > &origin, const \fBsize_t\fP< 3 > &region, ::\fBsize_t\fProw_pitch, ::\fBsize_t\fPslice_pitch, void *ptr, const VECTOR_CLASS< \fBEvent\fP > *events = \fCNULL\fP, \fBEvent\fP *event = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2790 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::Wrapper< cl_command_queue >::object_, and cl::vector< T, N >::size().
+.SS "cl_int cl::CommandQueue::finish () const\fC [inline]\fP"
+.PP
+Definition at line 3111 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.SS "cl_int cl::CommandQueue::flush () const\fC [inline]\fP"
+.PP
+Definition at line 3106 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_command_queue_info, name>::param_type cl::CommandQueue::getInfo (cl_int *err = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2602 of file cl.hpp.
+.PP
+References getInfo().
+.SS "template<typename T > cl_int cl::CommandQueue::getInfo (cl_command_queue_infoname, T *param) const\fC [inline]\fP"
+.PP
+Definition at line 2592 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::getInfo(), and cl::detail::Wrapper< cl_command_queue >::object_.
+.PP
+Referenced by getInfo(), and operator<<().
+.SS "\fBcl_type\fP& \fBcl::detail::Wrapper\fP< cl_command_queue  >::operator() ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 1123 of file cl.hpp.
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_command_queue  >::operator() () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1121 of file cl.hpp.
+.SS "\fBCommandQueue\fP& cl::CommandQueue::operator= (const \fBCommandQueue\fP &rhs)\fC [inline]\fP"
+.PP
+Definition at line 2583 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_command_queue  >::release () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1132 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_command_queue  >::retain () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1127 of file cl.hpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_command_queue  >::\fBobject_\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 1097 of file cl.hpp.
+.PP
+Referenced by CommandQueue(), enqueueAcquireGLObjects(), enqueueBarrier(), enqueueCopyBuffer(), enqueueCopyBufferToImage(), enqueueCopyImage(), enqueueCopyImageToBuffer(), enqueueMapBuffer(), enqueueMapImage(), enqueueMarker(), enqueueNativeKernel(), enqueueNDRangeKernel(), enqueueReadBuffer(), enqueueReadImage(), enqueueReleaseGLObjects(), enqueueTask(), enqueueUnmapMemObject(), enqueueWaitForEvents(), enqueueWriteBuffer(), enqueueWriteImage(), finish(), flush(), and getInfo().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

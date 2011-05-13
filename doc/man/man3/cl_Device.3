@@ -1,0 +1,130 @@
+.TH "cl::Device" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::Device \- 
+.PP
+\fBDevice\fP interface for cl_device_id.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.PP
+Inherits \fBWrapper< cl_device_id >\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef cl_device_id \fBcl_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDevice\fP (cl_device_id device)"
+.br
+.ti -1c
+.RI "\fBDevice\fP ()"
+.br
+.ti -1c
+.RI "\fBDevice\fP (const \fBDevice\fP &device)"
+.br
+.ti -1c
+.RI "\fBDevice\fP & \fBoperator=\fP (const \fBDevice\fP &rhs)"
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetInfo\fP (cl_device_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_device_info, name >::param_type \fBgetInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "\fBcl_type\fP \fBoperator()\fP () const"
+.br
+.ti -1c
+.RI "\fBcl_type\fP & \fBoperator()\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cl_int \fBretain\fP () const"
+.br
+.ti -1c
+.RI "cl_int \fBrelease\fP () const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcl_type\fP \fBobject_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBDevice\fP interface for cl_device_id. 
+.PP
+Definition at line 1184 of file cl.hpp.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef cl_device_id  \fBcl::detail::Wrapper\fP< cl_device_id  >::\fBcl_type\fP\fC [inherited]\fP"
+.PP
+Definition at line 1094 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cl::Device::Device (cl_device_iddevice)\fC [inline]\fP"
+.PP
+Definition at line 1187 of file cl.hpp.
+.PP
+References cl::detail::Wrapper< cl_device_id >::object_.
+.SS "cl::Device::Device ()\fC [inline]\fP"
+.PP
+Definition at line 1189 of file cl.hpp.
+.SS "cl::Device::Device (const \fBDevice\fP &device)\fC [inline]\fP"
+.PP
+Definition at line 1191 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T > cl_int cl::Device::getInfo (cl_device_infoname, T *param) const\fC [inline]\fP"
+.PP
+Definition at line 1202 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::getInfo(), and cl::detail::Wrapper< cl_device_id >::object_.
+.PP
+Referenced by getInfo(), and operator<<().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_device_info, name>::param_type cl::Device::getInfo (cl_int *err = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 1211 of file cl.hpp.
+.PP
+References getInfo().
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_device_id  >::operator() () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1121 of file cl.hpp.
+.SS "\fBcl_type\fP& \fBcl::detail::Wrapper\fP< cl_device_id  >::operator() ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 1123 of file cl.hpp.
+.SS "\fBDevice\fP& cl::Device::operator= (const \fBDevice\fP &rhs)\fC [inline]\fP"
+.PP
+Definition at line 1193 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_device_id  >::release () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1132 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_device_id  >::retain () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1127 of file cl.hpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_device_id  >::\fBobject_\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 1097 of file cl.hpp.
+.PP
+Referenced by Device(), and getInfo().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

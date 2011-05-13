@@ -1,0 +1,182 @@
+.TH "cl::Program" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::Program \- 
+.PP
+\fBProgram\fP interface that implements cl_program.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.PP
+Inherits \fBWrapper< cl_program >\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef VECTOR_CLASS< std::pair< const void *,::\fBsize_t\fP > > \fBBinaries\fP"
+.br
+.ti -1c
+.RI "typedef VECTOR_CLASS< std::pair< const char *,::\fBsize_t\fP > > \fBSources\fP"
+.br
+.ti -1c
+.RI "typedef cl_program \fBcl_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProgram\fP (const \fBContext\fP &context, const \fBSources\fP &sources, cl_int *err=NULL)"
+.br
+.ti -1c
+.RI "\fBProgram\fP (const \fBContext\fP &context, const VECTOR_CLASS< \fBDevice\fP > &devices, const \fBBinaries\fP &binaries, VECTOR_CLASS< cl_int > *binaryStatus=NULL, cl_int *err=NULL)"
+.br
+.ti -1c
+.RI "\fBProgram\fP ()"
+.br
+.ti -1c
+.RI "\fBProgram\fP (const \fBProgram\fP &program)"
+.br
+.ti -1c
+.RI "\fBProgram\fP & \fBoperator=\fP (const \fBProgram\fP &rhs)"
+.br
+.ti -1c
+.RI "cl_int \fBbuild\fP (const VECTOR_CLASS< \fBDevice\fP > &devices, const char *options=NULL, void(CL_CALLBACK *notifyFptr)(cl_program, void *)=NULL, void *data=NULL) const "
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetInfo\fP (cl_program_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_program_info, name >::param_type \fBgetInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetBuildInfo\fP (const \fBDevice\fP &device, cl_program_build_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_program_build_info, name >::param_type \fBgetBuildInfo\fP (const \fBDevice\fP &device, cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "cl_int \fBcreateKernels\fP (VECTOR_CLASS< \fBKernel\fP > *kernels)"
+.br
+.ti -1c
+.RI "\fBcl_type\fP \fBoperator()\fP () const"
+.br
+.ti -1c
+.RI "\fBcl_type\fP & \fBoperator()\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cl_int \fBretain\fP () const"
+.br
+.ti -1c
+.RI "cl_int \fBrelease\fP () const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcl_type\fP \fBobject_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBProgram\fP interface that implements cl_program. 
+.PP
+Definition at line 2387 of file cl.hpp.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef VECTOR_CLASS<std::pair<const void*, ::\fBsize_t\fP> > \fBcl::Program::Binaries\fP"
+.PP
+Definition at line 2390 of file cl.hpp.
+.SS "typedef cl_program  \fBcl::detail::Wrapper\fP< cl_program  >::\fBcl_type\fP\fC [inherited]\fP"
+.PP
+Definition at line 1094 of file cl.hpp.
+.SS "typedef VECTOR_CLASS<std::pair<const char*, ::\fBsize_t\fP> > \fBcl::Program::Sources\fP"
+.PP
+Definition at line 2391 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cl::Program::Program (const \fBContext\fP &context, const \fBSources\fP &sources, cl_int *err = \fCNULL\fP)\fC [inline]\fP"
+.PP
+Definition at line 2393 of file cl.hpp.
+.PP
+References cl::detail::errHandler().
+.SS "cl::Program::Program (const \fBContext\fP &context, const VECTOR_CLASS< \fBDevice\fP > &devices, const \fBBinaries\fP &binaries, VECTOR_CLASS< cl_int > *binaryStatus = \fCNULL\fP, cl_int *err = \fCNULL\fP)\fC [inline]\fP"
+.PP
+Definition at line 2418 of file cl.hpp.
+.PP
+References cl::detail::errHandler().
+.SS "cl::Program::Program ()\fC [inline]\fP"
+.PP
+Definition at line 2448 of file cl.hpp.
+.SS "cl::Program::Program (const \fBProgram\fP &program)\fC [inline]\fP"
+.PP
+Definition at line 2450 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "cl_int cl::Program::build (const VECTOR_CLASS< \fBDevice\fP > &devices, const char *options = \fCNULL\fP, void(CL_CALLBACK *notifyFptr)(cl_program, void *) = \fCNULL\fP, void *data = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2460 of file cl.hpp.
+.PP
+References cl::detail::errHandler().
+.PP
+Referenced by cryo::OpenCLManager::compileKernel().
+.SS "cl_int cl::Program::createKernels (VECTOR_CLASS< \fBKernel\fP > *kernels)\fC [inline]\fP"
+.PP
+Definition at line 2522 of file cl.hpp.
+.PP
+References cl::detail::errHandler().
+.SS "template<typename T > cl_int cl::Program::getBuildInfo (const \fBDevice\fP &device, cl_program_build_infoname, T *param) const\fC [inline]\fP"
+.PP
+Definition at line 2500 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::getInfo().
+.PP
+Referenced by cryo::OpenCLManager::compileKernel().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_program_build_info, name>::param_type cl::Program::getBuildInfo (const \fBDevice\fP &device, cl_int *err = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2511 of file cl.hpp.
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_program_info, name>::param_type cl::Program::getInfo (cl_int *err = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2488 of file cl.hpp.
+.PP
+References cl::detail::getInfo().
+.SS "template<typename T > cl_int cl::Program::getInfo (cl_program_infoname, T *param) const\fC [inline]\fP"
+.PP
+Definition at line 2479 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::getInfo().
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_program  >::operator() () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1121 of file cl.hpp.
+.SS "\fBcl_type\fP& \fBcl::detail::Wrapper\fP< cl_program  >::operator() ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 1123 of file cl.hpp.
+.SS "\fBProgram\fP& cl::Program::operator= (const \fBProgram\fP &rhs)\fC [inline]\fP"
+.PP
+Definition at line 2452 of file cl.hpp.
+.PP
+References cl::detail::Wrapper< T >::operator=().
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_program  >::release () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1132 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_program  >::retain () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1127 of file cl.hpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_program  >::\fBobject_\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 1097 of file cl.hpp.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

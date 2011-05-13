@@ -1,0 +1,363 @@
+.TH "/home/niall/Projects/Eclipse/cryo-opencl/src/CL/cl.hpp" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/niall/Projects/Eclipse/cryo-opencl/src/CL/cl.hpp \- 
+.PP
+C++ bindings for OpenCL 1.0 (rev 48) and OpenCL 1.1 (rev 33)  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <GL/gl.h>\fP
+.br
+\fC#include <CL/cl.h>\fP
+.br
+\fC#include <utility>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <exception>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBcl::string\fP"
+.br
+.RI "\fISimple string class, that provides a limited subset of std::string functionality but avoids many of the issues that come with that class. \fP"
+.ti -1c
+.RI "class \fBcl::vector< T, N >\fP"
+.br
+.RI "\fIFixed sized vector implementation that mirroring std::vector functionality. \fP"
+.ti -1c
+.RI "class \fBcl::vector< T, N >::iterator\fP"
+.br
+.RI "\fIIterator class for vectors. \fP"
+.ti -1c
+.RI "struct \fBcl::size_t< N >\fP"
+.br
+.RI "\fI\fBsize_t\fP class used to interface between C++ and OpenCL C calls that require arrays of \fBsize_t\fP values, who's size is known statically. \fP"
+.ti -1c
+.RI "struct \fBcl::detail::GetInfoHelper< Functor, T >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::GetInfoHelper< Func, VECTOR_CLASS< T > >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::GetInfoHelper< Func, VECTOR_CLASS< char * > >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::GetInfoHelper< Func, STRING_CLASS >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::param_traits< enum_type, Name >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::GetInfoFunctor0< Func, Arg0 >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::GetInfoFunctor1< Func, Arg0, Arg1 >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::ReferenceHandler< T >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::ReferenceHandler< cl_device_id >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::ReferenceHandler< cl_platform_id >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::ReferenceHandler< cl_context >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::ReferenceHandler< cl_command_queue >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::ReferenceHandler< cl_mem >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::ReferenceHandler< cl_sampler >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::ReferenceHandler< cl_program >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::ReferenceHandler< cl_kernel >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::ReferenceHandler< cl_event >\fP"
+.br
+.ti -1c
+.RI "class \fBcl::detail::Wrapper< T >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::ImageFormat\fP"
+.br
+.RI "\fI\fBImageFormat\fP interface fro cl_image_format. \fP"
+.ti -1c
+.RI "class \fBcl::Device\fP"
+.br
+.RI "\fI\fBDevice\fP interface for cl_device_id. \fP"
+.ti -1c
+.RI "class \fBcl::Platform\fP"
+.br
+.RI "\fI\fBPlatform\fP interface. \fP"
+.ti -1c
+.RI "class \fBcl::Context\fP"
+.br
+.ti -1c
+.RI "class \fBcl::Event\fP"
+.br
+.RI "\fI\fBEvent\fP interface for cl_event. \fP"
+.ti -1c
+.RI "class \fBcl::Memory\fP"
+.br
+.RI "\fI\fBMemory\fP interface for cl_mem. \fP"
+.ti -1c
+.RI "class \fBcl::Buffer\fP"
+.br
+.RI "\fI\fBMemory\fP buffer interface. \fP"
+.ti -1c
+.RI "class \fBcl::BufferGL\fP"
+.br
+.RI "\fI\fBMemory\fP buffer interface for GL interop. \fP"
+.ti -1c
+.RI "class \fBcl::BufferRenderGL\fP"
+.br
+.RI "\fI\fBMemory\fP buffer interface for GL interop with renderbuffer. \fP"
+.ti -1c
+.RI "class \fBcl::Image\fP"
+.br
+.RI "\fIBase class interface for all images. \fP"
+.ti -1c
+.RI "class \fBcl::Image2D\fP"
+.br
+.RI "\fI\fBImage\fP interface for 2D images. \fP"
+.ti -1c
+.RI "class \fBcl::Image2DGL\fP"
+.br
+.RI "\fI2D image interface for GL interop. \fP"
+.ti -1c
+.RI "class \fBcl::Image3D\fP"
+.br
+.RI "\fI\fBImage\fP interface for 3D images. \fP"
+.ti -1c
+.RI "class \fBcl::Image3DGL\fP"
+.br
+.ti -1c
+.RI "class \fBcl::Sampler\fP"
+.br
+.RI "\fI\fBSampler\fP interface for cl_sampler. \fP"
+.ti -1c
+.RI "class \fBcl::NDRange\fP"
+.br
+.RI "\fI\fBNDRange\fP interface. \fP"
+.ti -1c
+.RI "struct \fBcl::LocalSpaceArg\fP"
+.br
+.RI "\fILocal address raper for use with \fBKernel::setArg\fP. \fP"
+.ti -1c
+.RI "struct \fBcl::detail::KernelArgumentHandler< T >\fP"
+.br
+.ti -1c
+.RI "struct \fBcl::detail::KernelArgumentHandler< LocalSpaceArg >\fP"
+.br
+.ti -1c
+.RI "class \fBcl::Kernel\fP"
+.br
+.RI "\fI\fBKernel\fP interface that implements cl_kernel. \fP"
+.ti -1c
+.RI "class \fBcl::Program\fP"
+.br
+.RI "\fI\fBProgram\fP interface that implements cl_program. \fP"
+.ti -1c
+.RI "class \fBcl::CommandQueue\fP"
+.br
+.RI "\fI\fBCommandQueue\fP interface for cl_command_queue. \fP"
+.ti -1c
+.RI "class \fBcl::KernelFunctor\fP"
+.br
+.RI "\fI\fBKernel\fP functor interface. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBcl\fP"
+.br
+.PP
+
+.RI "\fIThe OpenCL C++ bindings are defined within this namespace. \fP"
+.ti -1c
+.RI "namespace \fBcl::detail\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCL_CALLBACK\fP"
+.br
+.ti -1c
+.RI "#define \fB__INIT_CL_EXT_FCN_PTR\fP(name)"
+.br
+.ti -1c
+.RI "#define \fB__ERR_STR\fP(x)   NULL"
+.br
+.ti -1c
+.RI "#define \fBVECTOR_CLASS\fP   std::vector"
+.br
+.ti -1c
+.RI "#define \fB__MAX_DEFAULT_VECTOR_SIZE\fP   10"
+.br
+.ti -1c
+.RI "#define \fB__GET_INFO_HELPER_WITH_RETAIN\fP(CPP_TYPE)"
+.br
+.ti -1c
+.RI "#define \fB__PARAM_NAME_INFO_1_0\fP(F)"
+.br
+.ti -1c
+.RI "#define \fB__DECLARE_PARAM_TRAITS\fP(token, param_name, T)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::string \fBcl::STRING_CLASS\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcl::detail::__PARAM_NAME_INFO_1_0\fP (__DECLARE_PARAM_TRAITS)"
+.br
+.ti -1c
+.RI "template<typename Func , typename T > cl_int \fBcl::detail::getInfo\fP (Func f, cl_uint name, T *param)"
+.br
+.ti -1c
+.RI "template<typename Func , typename Arg0 , typename T > cl_int \fBcl::detail::getInfo\fP (Func f, const Arg0 &arg0, cl_uint name, T *param)"
+.br
+.ti -1c
+.RI "template<typename Func , typename Arg0 , typename Arg1 , typename T > cl_int \fBcl::detail::getInfo\fP (Func f, const Arg0 &arg0, const Arg1 &arg1, cl_uint name, T *param)"
+.br
+.ti -1c
+.RI "static cl_int \fBcl::detail::errHandler\fP (cl_int err, const char *errStr=NULL)"
+.br
+.ti -1c
+.RI "static cl_int \fBcl::UnloadCompiler\fP ()"
+.br
+.ti -1c
+.RI "static cl_int \fBcl::WaitForEvents\fP (const VECTOR_CLASS< Event > &events)"
+.br
+.ti -1c
+.RI "LocalSpaceArg \fBcl::__local\fP (::size_t size)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const NDRange \fBcl::NullRange\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+C++ bindings for OpenCL 1.0 (rev 48) and OpenCL 1.1 (rev 33) 
+
+\fBAuthor:\fP
+.RS 4
+Benedict R. Gaster and Laurent Morichetti
+.RE
+.PP
+Additions and fixes from Brian Cole, March 3rd 2010.
+.PP
+\fBVersion:\fP
+.RS 4
+1.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+June 2010
+.RE
+.PP
+Optional extension support
+.PP
+cl cl_ext_device_fission #define USE_CL_DEVICE_FISSION 
+.PP
+Definition in file \fBcl.hpp\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define __DECLARE_PARAM_TRAITS(token, param_name, T)"\fBValue:\fP
+.PP
+.nf
+struct token;                                        \
+template<>                                           \
+struct param_traits<detail:: token,param_name>       \
+{                                                    \
+    enum { value = param_name };                     \
+    typedef T param_type;                            \
+};
+.fi
+.PP
+Definition at line 936 of file cl.hpp.
+.SS "#define __ERR_STR(x)   NULL"
+.PP
+Definition at line 248 of file cl.hpp.
+.SS "#define __GET_INFO_HELPER_WITH_RETAIN(CPP_TYPE)"\fBValue:\fP
+.PP
+.nf
+namespace detail { \
+template <typename Func> \
+struct GetInfoHelper<Func, CPP_TYPE> \
+{ \
+    static cl_int get(Func f, cl_uint name, CPP_TYPE* param) \
+    { \
+      cl_uint err = f(name, sizeof(CPP_TYPE), param, NULL); \
+      if (err != CL_SUCCESS) { \
+        return err; \
+      } \
+      \
+      return ReferenceHandler<CPP_TYPE::cl_type>::retain((*param)()); \
+    } \
+}; \
+}
+.fi
+.PP
+Definition at line 761 of file cl.hpp.
+.SS "#define __INIT_CL_EXT_FCN_PTR(name)"\fBValue:\fP
+.PP
+.nf
+if(!pfn_##name) { \
+        pfn_##name = (PFN_##name) \
+            clGetExtensionFunctionAddress(#name); \
+        if(!pfn_##name) { \
+        } \
+    }
+.fi
+.PP
+Definition at line 192 of file cl.hpp.
+.SS "#define __MAX_DEFAULT_VECTOR_SIZE   10"
+.PP
+Definition at line 426 of file cl.hpp.
+.SS "#define __PARAM_NAME_INFO_1_0(F)"
+.PP
+Definition at line 779 of file cl.hpp.
+.SS "#define CL_CALLBACK"
+.PP
+Definition at line 165 of file cl.hpp.
+.SS "#define VECTOR_CLASS   std::vector"
+.PP
+Definition at line 420 of file cl.hpp.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

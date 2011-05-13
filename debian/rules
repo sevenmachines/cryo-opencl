@@ -1,0 +1,4 @@
+#!/usr/bin/make -f
+DEB_SRCDIR = $(CURDIR)/Release
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/makefile.mk

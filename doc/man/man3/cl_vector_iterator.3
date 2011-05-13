@@ -1,0 +1,154 @@
+.TH "cl::vector::iterator" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::vector::iterator \- 
+.PP
+Iterator class for vectors.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBiterator\fP (void)"
+.br
+.ti -1c
+.RI "\fB~iterator\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBiterator\fP i)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (\fBiterator\fP i)"
+.br
+.ti -1c
+.RI "void \fBoperator++\fP ()"
+.br
+.ti -1c
+.RI "void \fBoperator++\fP (int x)"
+.br
+.ti -1c
+.RI "void \fBoperator--\fP ()"
+.br
+.ti -1c
+.RI "void \fBoperator--\fP (int x)"
+.br
+.ti -1c
+.RI "T \fBoperator*\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBiterator\fP \fBbegin\fP (\fBvector\fP< T, N > &vec)"
+.br
+.ti -1c
+.RI "static \fBiterator\fP \fBend\fP (\fBvector\fP< T, N > &vec)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBvector\fP< T, N > \fBvec_\fP"
+.br
+.ti -1c
+.RI "int \fBindex_\fP"
+.br
+.ti -1c
+.RI "bool \fBinitialized_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> class cl::vector< T, N >::iterator"
+Iterator class for vectors. 
+.PP
+Definition at line 567 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> \fBcl::vector\fP< T, N >::iterator::iterator (void)\fC [inline]\fP"
+.PP
+Definition at line 574 of file cl.hpp.
+.PP
+References cl::vector< T, N >::iterator::index_, and cl::vector< T, N >::iterator::initialized_.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> \fBcl::vector\fP< T, N >::iterator::~iterator (void)\fC [inline]\fP"
+.PP
+Definition at line 582 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> static \fBiterator\fP \fBcl::vector\fP< T, N >::iterator::begin (\fBvector\fP< T, N > &vec)\fC [inline, static]\fP"
+.PP
+Definition at line 584 of file cl.hpp.
+.PP
+References cl::vector< T, N >::empty(), cl::vector< T, N >::iterator::index_, cl::vector< T, N >::iterator::initialized_, and cl::vector< T, N >::iterator::vec_.
+.PP
+Referenced by cl::vector< ::size_t, N >::begin().
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> static \fBiterator\fP \fBcl::vector\fP< T, N >::iterator::end (\fBvector\fP< T, N > &vec)\fC [inline, static]\fP"
+.PP
+Definition at line 597 of file cl.hpp.
+.PP
+References cl::vector< T, N >::empty(), cl::vector< T, N >::iterator::index_, cl::vector< T, N >::iterator::initialized_, cl::vector< T, N >::size(), and cl::vector< T, N >::iterator::vec_.
+.PP
+Referenced by cl::vector< ::size_t, N >::end().
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> bool \fBcl::vector\fP< T, N >::iterator::operator!= (\fBiterator\fPi)\fC [inline]\fP"
+.PP
+Definition at line 616 of file cl.hpp.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> T \fBcl::vector\fP< T, N >::iterator::operator* ()\fC [inline]\fP"
+.PP
+Definition at line 641 of file cl.hpp.
+.PP
+References cl::vector< T, N >::iterator::index_, and cl::vector< T, N >::iterator::vec_.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> void \fBcl::vector\fP< T, N >::iterator::operator++ ()\fC [inline]\fP"
+.PP
+Definition at line 621 of file cl.hpp.
+.PP
+References cl::vector< T, N >::iterator::index_.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> void \fBcl::vector\fP< T, N >::iterator::operator++ (intx)\fC [inline]\fP"
+.PP
+Definition at line 626 of file cl.hpp.
+.PP
+References cl::vector< T, N >::iterator::index_.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> void \fBcl::vector\fP< T, N >::iterator::operator-- (intx)\fC [inline]\fP"
+.PP
+Definition at line 636 of file cl.hpp.
+.PP
+References cl::vector< T, N >::iterator::index_.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> void \fBcl::vector\fP< T, N >::iterator::operator-- ()\fC [inline]\fP"
+.PP
+Definition at line 631 of file cl.hpp.
+.PP
+References cl::vector< T, N >::iterator::index_.
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> bool \fBcl::vector\fP< T, N >::iterator::operator== (\fBiterator\fPi)\fC [inline]\fP"
+.PP
+Definition at line 609 of file cl.hpp.
+.PP
+References cl::vector< T, N >::iterator::index_, cl::vector< T, N >::iterator::initialized_, and cl::vector< T, N >::iterator::vec_.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> int \fBcl::vector\fP< T, N >::\fBiterator::index_\fP\fC [private]\fP"
+.PP
+Definition at line 571 of file cl.hpp.
+.PP
+Referenced by cl::vector< T, N >::iterator::begin(), cl::vector< T, N >::iterator::end(), cl::vector< T, N >::iterator::iterator(), cl::vector< T, N >::iterator::operator*(), cl::vector< T, N >::iterator::operator++(), cl::vector< T, N >::iterator::operator--(), and cl::vector< T, N >::iterator::operator==().
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> bool \fBcl::vector\fP< T, N >::\fBiterator::initialized_\fP\fC [private]\fP"
+.PP
+Definition at line 572 of file cl.hpp.
+.PP
+Referenced by cl::vector< T, N >::iterator::begin(), cl::vector< T, N >::iterator::end(), cl::vector< T, N >::iterator::iterator(), and cl::vector< T, N >::iterator::operator==().
+.SS "template<typename T, unsigned int N = __MAX_DEFAULT_VECTOR_SIZE> \fBvector\fP<T,N> \fBcl::vector\fP< T, N >::\fBiterator::vec_\fP\fC [private]\fP"
+.PP
+Definition at line 570 of file cl.hpp.
+.PP
+Referenced by cl::vector< T, N >::iterator::begin(), cl::vector< T, N >::iterator::end(), cl::vector< T, N >::iterator::operator*(), and cl::vector< T, N >::iterator::operator==().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

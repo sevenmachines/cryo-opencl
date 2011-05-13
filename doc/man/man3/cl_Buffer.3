@@ -1,0 +1,134 @@
+.TH "cl::Buffer" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::Buffer \- 
+.PP
+\fBMemory\fP buffer interface.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.PP
+Inherits \fBcl::Memory\fP.
+.PP
+Inherited by \fBcl::BufferGL\fP, and \fBcl::BufferRenderGL\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef cl_mem \fBcl_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBuffer\fP (const \fBContext\fP &context, cl_mem_flags flags,::\fBsize_t\fP size, void *host_ptr=NULL, cl_int *err=NULL)"
+.br
+.ti -1c
+.RI "\fBBuffer\fP ()"
+.br
+.ti -1c
+.RI "\fBBuffer\fP (const \fBBuffer\fP &buffer)"
+.br
+.ti -1c
+.RI "\fBBuffer\fP & \fBoperator=\fP (const \fBBuffer\fP &rhs)"
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetInfo\fP (cl_mem_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_mem_info, name >::param_type \fBgetInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "\fBcl_type\fP \fBoperator()\fP () const"
+.br
+.ti -1c
+.RI "\fBcl_type\fP & \fBoperator()\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cl_int \fBretain\fP () const"
+.br
+.ti -1c
+.RI "cl_int \fBrelease\fP () const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcl_type\fP \fBobject_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBMemory\fP buffer interface. 
+.PP
+Definition at line 1742 of file cl.hpp.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef cl_mem  \fBcl::detail::Wrapper\fP< cl_mem  >::\fBcl_type\fP\fC [inherited]\fP"
+.PP
+Definition at line 1094 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cl::Buffer::Buffer (const \fBContext\fP &context, cl_mem_flagsflags, ::\fBsize_t\fPsize, void *host_ptr = \fCNULL\fP, cl_int *err = \fCNULL\fP)\fC [inline]\fP"
+.PP
+Definition at line 1745 of file cl.hpp.
+.PP
+References cl::detail::errHandler().
+.SS "cl::Buffer::Buffer ()\fC [inline]\fP"
+.PP
+Definition at line 1761 of file cl.hpp.
+.SS "cl::Buffer::Buffer (const \fBBuffer\fP &buffer)\fC [inline]\fP"
+.PP
+Definition at line 1763 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T > cl_int cl::Memory::getInfo (cl_mem_infoname, T *param) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1701 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::getInfo(), and cl::detail::Wrapper< cl_mem >::object_.
+.PP
+Referenced by cl::Memory::getInfo().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_mem_info, name>::param_type cl::Memory::getInfo (cl_int *err = \fCNULL\fP) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1710 of file cl.hpp.
+.PP
+References cl::Memory::getInfo().
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_mem  >::operator() () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1121 of file cl.hpp.
+.SS "\fBcl_type\fP& \fBcl::detail::Wrapper\fP< cl_mem  >::operator() ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 1123 of file cl.hpp.
+.SS "\fBBuffer\fP& cl::Buffer::operator= (const \fBBuffer\fP &rhs)\fC [inline]\fP"
+.PP
+Definition at line 1765 of file cl.hpp.
+.PP
+References cl::Memory::operator=().
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_mem  >::release () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1132 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_mem  >::retain () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1127 of file cl.hpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_mem  >::\fBobject_\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 1097 of file cl.hpp.
+.PP
+Referenced by cl::BufferGL::BufferGL(), cl::BufferRenderGL::BufferRenderGL(), cl::Image::getImageInfo(), cl::Memory::getInfo(), cl::BufferRenderGL::getObjectInfo(), cl::BufferGL::getObjectInfo(), cl::Image2D::Image2D(), cl::Image2DGL::Image2DGL(), cl::Image3D::Image3D(), and cl::Image3DGL::Image3DGL().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

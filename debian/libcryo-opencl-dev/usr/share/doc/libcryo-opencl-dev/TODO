@@ -1,0 +1,6 @@
+TODO -----------
+
+* Create manual kernel verifier in OpenCLManager
+
+* Better error handling, dont continue if something major happens like program build failure
+

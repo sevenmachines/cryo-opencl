@@ -1,0 +1,150 @@
+.TH "cl::Image2D" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::Image2D \- 
+.PP
+\fBImage\fP interface for 2D images.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.PP
+Inherits \fBcl::Image\fP.
+.PP
+Inherited by \fBcl::Image2DGL\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef cl_mem \fBcl_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImage2D\fP (const \fBContext\fP &context, cl_mem_flags flags, \fBImageFormat\fP format,::\fBsize_t\fP width,::\fBsize_t\fP height,::\fBsize_t\fP row_pitch=0, void *host_ptr=NULL, cl_int *err=NULL)"
+.br
+.ti -1c
+.RI "\fBImage2D\fP ()"
+.br
+.ti -1c
+.RI "\fBImage2D\fP (const \fBImage2D\fP &image2D)"
+.br
+.ti -1c
+.RI "\fBImage2D\fP & \fBoperator=\fP (const \fBImage2D\fP &rhs)"
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetImageInfo\fP (cl_image_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_image_info, name >::param_type \fBgetImageInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetInfo\fP (cl_mem_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_mem_info, name >::param_type \fBgetInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "\fBcl_type\fP \fBoperator()\fP () const"
+.br
+.ti -1c
+.RI "\fBcl_type\fP & \fBoperator()\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cl_int \fBretain\fP () const"
+.br
+.ti -1c
+.RI "cl_int \fBrelease\fP () const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcl_type\fP \fBobject_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBImage\fP interface for 2D images. 
+.PP
+Definition at line 1980 of file cl.hpp.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef cl_mem  \fBcl::detail::Wrapper\fP< cl_mem  >::\fBcl_type\fP\fC [inherited]\fP"
+.PP
+Definition at line 1094 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cl::Image2D::Image2D (const \fBContext\fP &context, cl_mem_flagsflags, \fBImageFormat\fPformat, ::\fBsize_t\fPwidth, ::\fBsize_t\fPheight, ::\fBsize_t\fProw_pitch = \fC0\fP, void *host_ptr = \fCNULL\fP, cl_int *err = \fCNULL\fP)\fC [inline]\fP"
+.PP
+Definition at line 1983 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_mem >::object_.
+.SS "cl::Image2D::Image2D ()\fC [inline]\fP"
+.PP
+Definition at line 2003 of file cl.hpp.
+.SS "cl::Image2D::Image2D (const \fBImage2D\fP &image2D)\fC [inline]\fP"
+.PP
+Definition at line 2005 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T > cl_int cl::Image::getImageInfo (cl_image_infoname, T *param) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1956 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::getInfo(), and cl::detail::Wrapper< cl_mem >::object_.
+.PP
+Referenced by cl::Image::getImageInfo().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_image_info, name>::param_type cl::Image::getImageInfo (cl_int *err = \fCNULL\fP) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1965 of file cl.hpp.
+.PP
+References cl::Image::getImageInfo().
+.SS "template<typename T > cl_int cl::Memory::getInfo (cl_mem_infoname, T *param) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1701 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::getInfo(), and cl::detail::Wrapper< cl_mem >::object_.
+.PP
+Referenced by cl::Memory::getInfo().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_mem_info, name>::param_type cl::Memory::getInfo (cl_int *err = \fCNULL\fP) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1710 of file cl.hpp.
+.PP
+References cl::Memory::getInfo().
+.SS "\fBcl_type\fP& \fBcl::detail::Wrapper\fP< cl_mem  >::operator() ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 1123 of file cl.hpp.
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_mem  >::operator() () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1121 of file cl.hpp.
+.SS "\fBImage2D\fP& cl::Image2D::operator= (const \fBImage2D\fP &rhs)\fC [inline]\fP"
+.PP
+Definition at line 2007 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_mem  >::release () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1132 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_mem  >::retain () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1127 of file cl.hpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_mem  >::\fBobject_\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 1097 of file cl.hpp.
+.PP
+Referenced by cl::BufferGL::BufferGL(), cl::BufferRenderGL::BufferRenderGL(), cl::Image::getImageInfo(), cl::Memory::getInfo(), cl::BufferRenderGL::getObjectInfo(), cl::BufferGL::getObjectInfo(), Image2D(), cl::Image2DGL::Image2DGL(), cl::Image3D::Image3D(), and cl::Image3DGL::Image3DGL().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

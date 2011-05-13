@@ -1,0 +1,180 @@
+.TH "cl::Kernel" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::Kernel \- 
+.PP
+\fBKernel\fP interface that implements cl_kernel.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.PP
+Inherits \fBWrapper< cl_kernel >\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef cl_kernel \fBcl_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKernel\fP (const \fBProgram\fP &program, const char *name, cl_int *err=NULL)"
+.br
+.ti -1c
+.RI "\fBKernel\fP ()"
+.br
+.ti -1c
+.RI "\fBKernel\fP (const \fBKernel\fP &kernel)"
+.br
+.ti -1c
+.RI "\fBKernel\fP & \fBoperator=\fP (const \fBKernel\fP &rhs)"
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetInfo\fP (cl_kernel_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_kernel_info, name >::param_type \fBgetInfo\fP (cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBgetWorkGroupInfo\fP (const \fBDevice\fP &device, cl_kernel_work_group_info name, T *param) const "
+.br
+.ti -1c
+.RI "template<cl_int name> \fBdetail::param_traits\fP< detail::cl_kernel_work_group_info, name >::param_type \fBgetWorkGroupInfo\fP (const \fBDevice\fP &device, cl_int *err=NULL) const "
+.br
+.ti -1c
+.RI "template<typename T > cl_int \fBsetArg\fP (cl_uint index, T value)"
+.br
+.ti -1c
+.RI "cl_int \fBsetArg\fP (cl_uint index,::\fBsize_t\fP size, void *argPtr)"
+.br
+.ti -1c
+.RI "\fBKernelFunctor\fP \fBbind\fP (const \fBCommandQueue\fP &queue, const \fBNDRange\fP &offset, const \fBNDRange\fP &global, const \fBNDRange\fP &local)"
+.br
+.ti -1c
+.RI "\fBKernelFunctor\fP \fBbind\fP (const \fBCommandQueue\fP &queue, const \fBNDRange\fP &global, const \fBNDRange\fP &local)"
+.br
+.ti -1c
+.RI "\fBcl_type\fP \fBoperator()\fP () const"
+.br
+.ti -1c
+.RI "\fBcl_type\fP & \fBoperator()\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cl_int \fBretain\fP () const"
+.br
+.ti -1c
+.RI "cl_int \fBrelease\fP () const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcl_type\fP \fBobject_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBKernel\fP interface that implements cl_kernel. 
+.PP
+Definition at line 2290 of file cl.hpp.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef cl_kernel  \fBcl::detail::Wrapper\fP< cl_kernel  >::\fBcl_type\fP\fC [inherited]\fP"
+.PP
+Definition at line 1094 of file cl.hpp.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cl::Kernel::Kernel (const \fBProgram\fP &program, const char *name, cl_int *err = \fCNULL\fP)\fC [inline]\fP"
+.PP
+Definition at line 2544 of file cl.hpp.
+.PP
+References cl::detail::errHandler().
+.SS "cl::Kernel::Kernel ()\fC [inline]\fP"
+.PP
+Definition at line 2295 of file cl.hpp.
+.SS "cl::Kernel::Kernel (const \fBKernel\fP &kernel)\fC [inline]\fP"
+.PP
+Definition at line 2297 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBKernelFunctor\fP cl::Kernel::bind (const \fBCommandQueue\fP &queue, const \fBNDRange\fP &offset, const \fBNDRange\fP &global, const \fBNDRange\fP &local)\fC [inline]\fP"
+.PP
+Definition at line 3356 of file cl.hpp.
+.SS "\fBKernelFunctor\fP cl::Kernel::bind (const \fBCommandQueue\fP &queue, const \fBNDRange\fP &global, const \fBNDRange\fP &local)\fC [inline]\fP"
+.PP
+Definition at line 3365 of file cl.hpp.
+.PP
+References cl::NullRange.
+.SS "template<typename T > cl_int cl::Kernel::getInfo (cl_kernel_infoname, T *param) const\fC [inline]\fP"
+.PP
+Definition at line 2308 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::getInfo(), and cl::detail::Wrapper< cl_kernel >::object_.
+.PP
+Referenced by getInfo(), and operator<<().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_kernel_info, name>::param_type cl::Kernel::getInfo (cl_int *err = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2317 of file cl.hpp.
+.PP
+References getInfo().
+.SS "template<typename T > cl_int cl::Kernel::getWorkGroupInfo (const \fBDevice\fP &device, cl_kernel_work_group_infoname, T *param) const\fC [inline]\fP"
+.PP
+Definition at line 2329 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), cl::detail::getInfo(), and cl::detail::Wrapper< cl_kernel >::object_.
+.PP
+Referenced by getWorkGroupInfo().
+.SS "template<cl_int name> \fBdetail::param_traits\fP<detail::cl_kernel_work_group_info, name>::param_type cl::Kernel::getWorkGroupInfo (const \fBDevice\fP &device, cl_int *err = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Definition at line 2340 of file cl.hpp.
+.PP
+References getWorkGroupInfo().
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_kernel  >::operator() () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 1121 of file cl.hpp.
+.SS "\fBcl_type\fP& \fBcl::detail::Wrapper\fP< cl_kernel  >::operator() ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 1123 of file cl.hpp.
+.SS "\fBKernel\fP& cl::Kernel::operator= (const \fBKernel\fP &rhs)\fC [inline]\fP"
+.PP
+Definition at line 2299 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_kernel  >::release () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1132 of file cl.hpp.
+.SS "cl_int \fBcl::detail::Wrapper\fP< cl_kernel  >::retain () const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 1127 of file cl.hpp.
+.SS "cl_int cl::Kernel::setArg (cl_uintindex, ::\fBsize_t\fPsize, void *argPtr)\fC [inline]\fP"
+.PP
+Definition at line 2363 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_kernel >::object_.
+.SS "template<typename T > cl_int cl::Kernel::setArg (cl_uintindex, Tvalue)\fC [inline]\fP"
+.PP
+Definition at line 2352 of file cl.hpp.
+.PP
+References cl::detail::errHandler(), and cl::detail::Wrapper< cl_kernel >::object_.
+.PP
+Referenced by cl::KernelFunctor::operator()().
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcl_type\fP \fBcl::detail::Wrapper\fP< cl_kernel  >::\fBobject_\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 1097 of file cl.hpp.
+.PP
+Referenced by getInfo(), getWorkGroupInfo(), and setArg().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

@@ -1,0 +1,115 @@
+.TH "cl::detail" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::detail \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBGetInfoHelper\fP"
+.br
+.ti -1c
+.RI "struct \fBGetInfoHelper< Func, VECTOR_CLASS< T > >\fP"
+.br
+.ti -1c
+.RI "struct \fBGetInfoHelper< Func, VECTOR_CLASS< char * > >\fP"
+.br
+.ti -1c
+.RI "struct \fBGetInfoHelper< Func, STRING_CLASS >\fP"
+.br
+.ti -1c
+.RI "struct \fBparam_traits\fP"
+.br
+.ti -1c
+.RI "struct \fBGetInfoFunctor0\fP"
+.br
+.ti -1c
+.RI "struct \fBGetInfoFunctor1\fP"
+.br
+.ti -1c
+.RI "struct \fBReferenceHandler\fP"
+.br
+.ti -1c
+.RI "struct \fBReferenceHandler< cl_device_id >\fP"
+.br
+.ti -1c
+.RI "struct \fBReferenceHandler< cl_platform_id >\fP"
+.br
+.ti -1c
+.RI "struct \fBReferenceHandler< cl_context >\fP"
+.br
+.ti -1c
+.RI "struct \fBReferenceHandler< cl_command_queue >\fP"
+.br
+.ti -1c
+.RI "struct \fBReferenceHandler< cl_mem >\fP"
+.br
+.ti -1c
+.RI "struct \fBReferenceHandler< cl_sampler >\fP"
+.br
+.ti -1c
+.RI "struct \fBReferenceHandler< cl_program >\fP"
+.br
+.ti -1c
+.RI "struct \fBReferenceHandler< cl_kernel >\fP"
+.br
+.ti -1c
+.RI "struct \fBReferenceHandler< cl_event >\fP"
+.br
+.ti -1c
+.RI "class \fBWrapper\fP"
+.br
+.ti -1c
+.RI "struct \fBKernelArgumentHandler\fP"
+.br
+.ti -1c
+.RI "struct \fBKernelArgumentHandler< LocalSpaceArg >\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__PARAM_NAME_INFO_1_0\fP (__DECLARE_PARAM_TRAITS)"
+.br
+.ti -1c
+.RI "template<typename Func , typename T > cl_int \fBgetInfo\fP (Func f, cl_uint name, T *param)"
+.br
+.ti -1c
+.RI "template<typename Func , typename Arg0 , typename T > cl_int \fBgetInfo\fP (Func f, const Arg0 &arg0, cl_uint name, T *param)"
+.br
+.ti -1c
+.RI "template<typename Func , typename Arg0 , typename Arg1 , typename T > cl_int \fBgetInfo\fP (Func f, const Arg0 &arg0, const Arg1 &arg1, cl_uint name, T *param)"
+.br
+.ti -1c
+.RI "static cl_int \fBerrHandler\fP (cl_int err, const char *errStr=NULL)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "cl::detail::__PARAM_NAME_INFO_1_0 (__DECLARE_PARAM_TRAITS)"
+.SS "static cl_int cl::detail::errHandler (cl_interr, const char *errStr = \fCNULL\fP)\fC [inline, static]\fP"
+.PP
+Definition at line 1149 of file cl.hpp.
+.PP
+Referenced by cl::Buffer::Buffer(), cl::BufferGL::BufferGL(), cl::BufferRenderGL::BufferRenderGL(), cl::Program::build(), cl::CommandQueue::CommandQueue(), cl::Context::Context(), cl::Program::createKernels(), cl::CommandQueue::enqueueAcquireGLObjects(), cl::CommandQueue::enqueueBarrier(), cl::CommandQueue::enqueueCopyBuffer(), cl::CommandQueue::enqueueCopyBufferToImage(), cl::CommandQueue::enqueueCopyImage(), cl::CommandQueue::enqueueCopyImageToBuffer(), cl::CommandQueue::enqueueMapBuffer(), cl::CommandQueue::enqueueMapImage(), cl::CommandQueue::enqueueMarker(), cl::CommandQueue::enqueueNativeKernel(), cl::CommandQueue::enqueueNDRangeKernel(), cl::CommandQueue::enqueueReadBuffer(), cl::CommandQueue::enqueueReadImage(), cl::CommandQueue::enqueueReleaseGLObjects(), cl::CommandQueue::enqueueTask(), cl::CommandQueue::enqueueUnmapMemObject(), cl::CommandQueue::enqueueWaitForEvents(), cl::CommandQueue::enqueueWriteBuffer(), cl::CommandQueue::enqueueWriteImage(), cl::CommandQueue::finish(), cl::CommandQueue::flush(), cl::Platform::get(), cl::Program::getBuildInfo(), cl::Platform::getDevices(), cl::Image::getImageInfo(), cl::CommandQueue::getInfo(), cl::Program::getInfo(), cl::Kernel::getInfo(), cl::Sampler::getInfo(), cl::Memory::getInfo(), cl::Event::getInfo(), cl::Context::getInfo(), cl::Platform::getInfo(), cl::Device::getInfo(), cl::BufferRenderGL::getObjectInfo(), cl::BufferGL::getObjectInfo(), cl::Event::getProfilingInfo(), cl::Context::getSupportedImageFormats(), cl::Kernel::getWorkGroupInfo(), cl::Image2D::Image2D(), cl::Image2DGL::Image2DGL(), cl::Image3D::Image3D(), cl::Image3DGL::Image3DGL(), cl::Kernel::Kernel(), cl::Program::Program(), cl::Sampler::Sampler(), cl::Kernel::setArg(), cl::Event::wait(), cl::WaitForEvents(), and cl::Event::waitForEvents().
+.SS "template<typename Func , typename Arg0 , typename Arg1 , typename T > cl_int cl::detail::getInfo (Funcf, const Arg0 &arg0, const Arg1 &arg1, cl_uintname, T *param)\fC [inline]\fP"
+.PP
+Definition at line 994 of file cl.hpp.
+.SS "template<typename Func , typename Arg0 , typename T > cl_int cl::detail::getInfo (Funcf, const Arg0 &arg0, cl_uintname, T *param)\fC [inline]\fP"
+.PP
+Definition at line 985 of file cl.hpp.
+.SS "template<typename Func , typename T > cl_int cl::detail::getInfo (Funcf, cl_uintname, T *param)\fC [inline]\fP"
+.PP
+Definition at line 960 of file cl.hpp.
+.PP
+References cl::detail::GetInfoHelper< Functor, T >::get().
+.PP
+Referenced by cl::Program::getBuildInfo(), cl::Image::getImageInfo(), cl::CommandQueue::getInfo(), cl::Program::getInfo(), cl::Kernel::getInfo(), cl::Sampler::getInfo(), cl::Memory::getInfo(), cl::Event::getInfo(), cl::Context::getInfo(), cl::Platform::getInfo(), cl::Device::getInfo(), cl::Event::getProfilingInfo(), and cl::Kernel::getWorkGroupInfo().
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

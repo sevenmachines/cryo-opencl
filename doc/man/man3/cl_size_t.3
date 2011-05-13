@@ -1,0 +1,178 @@
+.TH "cl::size_t" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl::size_t \- 
+.PP
+\fBsize_t\fP class used to interface between C++ and OpenCL C calls that require arrays of \fBsize_t\fP values, who's size is known statically.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cl.hpp>\fP
+.PP
+Inherits \fBvector< ::size_t, N >\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBsize\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "void \fBpush_back\fP (const ::\fBsize_t\fP &x)"
+.br
+.ti -1c
+.RI "void \fBpop_back\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBvector\fP< ::\fBsize_t\fP, N > &vec)"
+.br
+.ti -1c
+.RI "\fBoperator::size_t *\fP ()"
+.br
+.ti -1c
+.RI "\fBoperator const ::size_t *\fP () const"
+.br
+.ti -1c
+.RI "bool \fBempty\fP (void) const"
+.br
+.ti -1c
+.RI "unsigned int \fBmax_size\fP (void) const"
+.br
+.ti -1c
+.RI "unsigned int \fBcapacity\fP () const"
+.br
+.ti -1c
+.RI "::\fBsize_t\fP & \fBoperator[]\fP (int index)"
+.br
+.ti -1c
+.RI "::\fBsize_t\fP \fBoperator[]\fP (int index) const"
+.br
+.ti -1c
+.RI "void \fBassign\fP (I start, I end)"
+.br
+.ti -1c
+.RI "iterator \fBbegin\fP (void)"
+.br
+.ti -1c
+.RI "iterator \fBend\fP (void)"
+.br
+.ti -1c
+.RI "::\fBsize_t\fP & \fBfront\fP (void)"
+.br
+.ti -1c
+.RI "const ::\fBsize_t\fP & \fBfront\fP (void) const"
+.br
+.ti -1c
+.RI "::\fBsize_t\fP & \fBback\fP (void)"
+.br
+.ti -1c
+.RI "const ::\fBsize_t\fP & \fBback\fP (void) const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<int N> struct cl::size_t< N >"
+\fBsize_t\fP class used to interface between C++ and OpenCL C calls that require arrays of \fBsize_t\fP values, who's size is known statically. 
+.PP
+Definition at line 684 of file cl.hpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "void \fBcl::vector\fP< ::\fBsize_t\fP , N >::assign (Istart, Iend)\fC [inline, inherited]\fP"
+.PP
+Definition at line 555 of file cl.hpp.
+.PP
+References cl::vector< T, N >::clear(), and cl::vector< T, N >::push_back().
+.SS "::\fBsize_t\fP & \fBcl::vector\fP< ::\fBsize_t\fP , N >::back (void)\fC [inline, inherited]\fP"
+.PP
+Definition at line 662 of file cl.hpp.
+.PP
+References cl::vector< T, N >::data_, and cl::vector< T, N >::size_.
+.SS "const ::\fBsize_t\fP & \fBcl::vector\fP< ::\fBsize_t\fP , N >::back (void) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 672 of file cl.hpp.
+.PP
+References cl::vector< T, N >::data_, and cl::vector< T, N >::size_.
+.SS "iterator \fBcl::vector\fP< ::\fBsize_t\fP , N >::begin (void)\fC [inline, inherited]\fP"
+.PP
+Definition at line 647 of file cl.hpp.
+.PP
+References cl::vector< T, N >::iterator::begin().
+.SS "unsigned int \fBcl::vector\fP< ::\fBsize_t\fP , N >::capacity () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 539 of file cl.hpp.
+.SS "void \fBcl::vector\fP< ::\fBsize_t\fP , N >::clear ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 453 of file cl.hpp.
+.PP
+References cl::vector< T, N >::empty_, and cl::vector< T, N >::size_.
+.SS "bool \fBcl::vector\fP< ::\fBsize_t\fP , N >::empty (void) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 529 of file cl.hpp.
+.PP
+References cl::vector< T, N >::empty_.
+.SS "iterator \fBcl::vector\fP< ::\fBsize_t\fP , N >::end (void)\fC [inline, inherited]\fP"
+.PP
+Definition at line 652 of file cl.hpp.
+.PP
+References cl::vector< T, N >::iterator::end().
+.SS "const ::\fBsize_t\fP & \fBcl::vector\fP< ::\fBsize_t\fP , N >::front (void) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 667 of file cl.hpp.
+.PP
+References cl::vector< T, N >::data_.
+.SS "::\fBsize_t\fP & \fBcl::vector\fP< ::\fBsize_t\fP , N >::front (void)\fC [inline, inherited]\fP"
+.PP
+Definition at line 657 of file cl.hpp.
+.PP
+References cl::vector< T, N >::data_.
+.SS "unsigned int \fBcl::vector\fP< ::\fBsize_t\fP , N >::max_size (void) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 534 of file cl.hpp.
+.SS "\fBcl::vector\fP< ::\fBsize_t\fP , N >::operator const ::\fBsize_t\fP  * () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 527 of file cl.hpp.
+.SS "\fBcl::vector\fP< ::\fBsize_t\fP , N >::operator ::\fBsize_t\fP  * ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 526 of file cl.hpp.
+.PP
+References cl::vector< T, N >::data_.
+.SS "bool \fBcl::vector\fP< ::\fBsize_t\fP , N >::operator== (\fBvector\fP< ::\fBsize_t\fP , N > &vec)\fC [inline, inherited]\fP"
+.PP
+Definition at line 513 of file cl.hpp.
+.PP
+References cl::vector< T, N >::data_, cl::vector< T, N >::empty_, and cl::vector< T, N >::size().
+.SS "::\fBsize_t\fP & \fBcl::vector\fP< ::\fBsize_t\fP , N >::operator[] (intindex)\fC [inline, inherited]\fP"
+.PP
+Definition at line 544 of file cl.hpp.
+.PP
+References cl::vector< T, N >::data_.
+.SS "::\fBsize_t\fP  \fBcl::vector\fP< ::\fBsize_t\fP , N >::operator[] (intindex) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 549 of file cl.hpp.
+.PP
+References cl::vector< T, N >::data_.
+.SS "void \fBcl::vector\fP< ::\fBsize_t\fP , N >::pop_back (void)\fC [inline, inherited]\fP"
+.PP
+Definition at line 468 of file cl.hpp.
+.PP
+References cl::vector< T, N >::data_, cl::vector< T, N >::empty_, and cl::vector< T, N >::size_.
+.SS "void \fBcl::vector\fP< ::\fBsize_t\fP , N >::push_back (const ::\fBsize_t\fP  &x)\fC [inline, inherited]\fP"
+.PP
+Definition at line 459 of file cl.hpp.
+.PP
+References cl::vector< T, N >::data_, cl::vector< T, N >::empty_, cl::vector< T, N >::size(), and cl::vector< T, N >::size_.
+.SS "unsigned int \fBcl::vector\fP< ::\fBsize_t\fP , N >::size (void) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 448 of file cl.hpp.
+.PP
+References cl::vector< T, N >::size_.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

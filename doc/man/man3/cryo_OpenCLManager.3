@@ -1,0 +1,293 @@
+.TH "cryo::OpenCLManager" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryo::OpenCLManager \- 
+.PP
+The \fBOpenCLManager\fP class deals with the bulk of setting up and tearing down opencl.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <OpenCLManager.h>\fP
+.PP
+Inherited by \fBcryo::runners::NullRunner\fP, and \fBcryo::runners::SimpleRunner\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOpenCLManager\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~OpenCLManager\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBrun\fP ()=0"
+.br
+.ti -1c
+.RI "virtual bool \fBloadKernelSource\fP (const std::string ifstring)"
+.br
+.ti -1c
+.RI "virtual const char * \fBoclErrorString\fP (cl_int \fBerror\fP)"
+.br
+.ti -1c
+.RI "virtual bool \fBloadKernel\fP (std::string kernelstring)"
+.br
+.ti -1c
+.RI "virtual bool \fBcompileKernel\fP (std::string buildoptions='')"
+.br
+.ti -1c
+.RI "boost::shared_ptr< \fBcl::Kernel\fP > \fBgetMutableKernel\fP (const std::string &name)"
+.br
+.RI "\fIGet kernel by kernel name. \fP"
+.ti -1c
+.RI "virtual std::string \fBgetKernelSource\fP ()"
+.br
+.ti -1c
+.RI "const std::vector< \fBcl::Platform\fP > & \fBgetPlatforms\fP () const "
+.br
+.ti -1c
+.RI "const std::vector< \fBcl::Device\fP > & \fBgetDevices\fP () const "
+.br
+.ti -1c
+.RI "const \fBcl::Device\fP & \fBgetActiveDevice\fP () const "
+.br
+.ti -1c
+.RI "const \fBcl::Context\fP & \fBgetContext\fP () const "
+.br
+.ti -1c
+.RI "const std::map< std::string, boost::shared_ptr< \fBcl::Kernel\fP > > & \fBgetKernels\fP () const "
+.br
+.ti -1c
+.RI "const \fBcl::CommandQueue\fP & \fBgetCommandQueue\fP () const "
+.br
+.ti -1c
+.RI "const \fBcl::Program\fP & \fBgetProgram\fP () const "
+.br
+.ti -1c
+.RI "void \fBparseFunctionNames\fP (const std::string &source)"
+.br
+.ti -1c
+.RI "std::ostream & \fBprintKernelNames\fP (std::ostream &os)"
+.br
+.ti -1c
+.RI "std::ostream & \fBprintKernelSource\fP (std::ostream &os)"
+.br
+.ti -1c
+.RI "std::ostream & \fBprintCLError\fP (std::ostream &os, const cl::Error &er)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBinitialise\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBkernelSource\fP"
+.br
+.ti -1c
+.RI "std::string \fBsourceString\fP"
+.br
+.ti -1c
+.RI "std::set< std::string > \fBkernelNames\fP"
+.br
+.ti -1c
+.RI "bool \fBplatform_id_success\fP"
+.br
+.ti -1c
+.RI "bool \fBdevice_id_success\fP"
+.br
+.ti -1c
+.RI "bool \fBkernel_compilation_success\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBcl::Platform\fP > \fBplatforms\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBcl::Device\fP > \fBdevices\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBcl::Device\fP >::const_iterator \fBactiveDevice\fP"
+.br
+.ti -1c
+.RI "\fBcl::Context\fP \fBcontext\fP"
+.br
+.ti -1c
+.RI "std::map< std::string, boost::shared_ptr< \fBcl::Kernel\fP > > \fBkernels\fP"
+.br
+.ti -1c
+.RI "\fBcl::CommandQueue\fP \fBcommandQueue\fP"
+.br
+.ti -1c
+.RI "\fBcl::Program\fP \fBprogram\fP"
+.br
+.ti -1c
+.RI "cl_int \fBerror\fP"
+.br
+.ti -1c
+.RI "\fBcl::Event\fP \fBevent\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBOpenCLManager\fP class deals with the bulk of setting up and tearing down opencl. 
+
+Subclasses load program source in their constructor and then should implement the \fBrun()\fP method to actually do calculations. 
+.PP
+Definition at line 30 of file OpenCLManager.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "home niall Projects Eclipse cryo opencl src \fBOpenCLManager\fP cpp cryo::OpenCLManager::OpenCLManager ()"
+.PP
+Definition at line 17 of file OpenCLManager.cpp.
+.SS "cryo::OpenCLManager::~OpenCLManager ()\fC [virtual]\fP"
+.PP
+Definition at line 20 of file OpenCLManager.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool cryo::OpenCLManager::compileKernel (std::stringbuildoptions = \fC''\fP)\fC [virtual]\fP"
+.PP
+Definition at line 161 of file OpenCLManager.cpp.
+.PP
+References cl::Program::build(), devices, cl::Program::getBuildInfo(), and program.
+.SS "const \fBcl::Device\fP & cryo::OpenCLManager::getActiveDevice () const"
+.PP
+Definition at line 40 of file OpenCLManager.cpp.
+.SS "const \fBcl::CommandQueue\fP & cryo::OpenCLManager::getCommandQueue () const"
+.PP
+Definition at line 49 of file OpenCLManager.cpp.
+.SS "const \fBcl::Context\fP & cryo::OpenCLManager::getContext () const"
+.PP
+Definition at line 43 of file OpenCLManager.cpp.
+.SS "const std::vector< \fBcl::Device\fP > & cryo::OpenCLManager::getDevices () const"
+.PP
+Definition at line 37 of file OpenCLManager.cpp.
+.SS "const std::map< std::string, boost::shared_ptr< \fBcl::Kernel\fP > > & cryo::OpenCLManager::getKernels () const"
+.PP
+Definition at line 46 of file OpenCLManager.cpp.
+.SS "std::string cryo::OpenCLManager::getKernelSource ()\fC [virtual]\fP"
+.PP
+Definition at line 22 of file OpenCLManager.cpp.
+.SS "boost::shared_ptr< \fBcl::Kernel\fP > cryo::OpenCLManager::getMutableKernel (const std::string &name)"
+.PP
+Get kernel by kernel name. 
+.PP
+Definition at line 26 of file OpenCLManager.cpp.
+.SS "const std::vector< \fBcl::Platform\fP > & cryo::OpenCLManager::getPlatforms () const"
+.PP
+Definition at line 34 of file OpenCLManager.cpp.
+.SS "const \fBcl::Program\fP & cryo::OpenCLManager::getProgram () const"
+.PP
+Definition at line 52 of file OpenCLManager.cpp.
+.SS "bool cryo::OpenCLManager::initialise ()\fC [protected]\fP"
+.PP
+Definition at line 79 of file OpenCLManager.cpp.
+.PP
+References cl::Platform::get(), and platforms.
+.SS "bool cryo::OpenCLManager::loadKernel (std::stringkernelstring)\fC [virtual]\fP"
+.PP
+Definition at line 233 of file OpenCLManager.cpp.
+.PP
+References context, and program.
+.PP
+Referenced by cryo::runners::NullRunner::NullRunner().
+.SS "bool cryo::OpenCLManager::loadKernelSource (const std::stringifstring)\fC [virtual]\fP"
+.PP
+Definition at line 134 of file OpenCLManager.cpp.
+.PP
+References kernelSource, parseFunctionNames(), and printKernelNames().
+.SS "const char * cryo::OpenCLManager::oclErrorString (cl_interror)\fC [virtual]\fP"
+.PP
+Definition at line 56 of file OpenCLManager.cpp.
+.SS "void cryo::OpenCLManager::parseFunctionNames (const std::string &source)"
+.PP
+Definition at line 260 of file OpenCLManager.cpp.
+.PP
+References kernelNames.
+.PP
+Referenced by loadKernelSource().
+.SS "std::ostream & cryo::OpenCLManager::printCLError (std::ostream &os, const cl::Error &er)"
+.PP
+Definition at line 305 of file OpenCLManager.cpp.
+.SS "std::ostream & cryo::OpenCLManager::printKernelNames (std::ostream &os)"
+.PP
+Definition at line 290 of file OpenCLManager.cpp.
+.PP
+References kernelNames.
+.PP
+Referenced by loadKernelSource().
+.SS "std::ostream & cryo::OpenCLManager::printKernelSource (std::ostream &os)"
+.PP
+Definition at line 249 of file OpenCLManager.cpp.
+.SS "virtual bool cryo::OpenCLManager::run ()\fC [pure virtual]\fP"
+.PP
+Implemented in \fBcryo::runners::NullRunner\fP, and \fBcryo::runners::SimpleRunner\fP.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBcl::Device\fP>::const_iterator \fBcryo::OpenCLManager::activeDevice\fP\fC [protected]\fP"
+.PP
+Definition at line 74 of file OpenCLManager.h.
+.SS "\fBcl::CommandQueue\fP \fBcryo::OpenCLManager::commandQueue\fP\fC [protected]\fP"
+.PP
+Definition at line 79 of file OpenCLManager.h.
+.SS "\fBcl::Context\fP \fBcryo::OpenCLManager::context\fP\fC [protected]\fP"
+.PP
+Definition at line 76 of file OpenCLManager.h.
+.PP
+Referenced by loadKernel().
+.SS "bool \fBcryo::OpenCLManager::device_id_success\fP\fC [protected]\fP"
+.PP
+Definition at line 68 of file OpenCLManager.h.
+.SS "std::vector<\fBcl::Device\fP> \fBcryo::OpenCLManager::devices\fP\fC [protected]\fP"
+.PP
+Definition at line 73 of file OpenCLManager.h.
+.PP
+Referenced by compileKernel().
+.SS "cl_int \fBcryo::OpenCLManager::error\fP\fC [protected]\fP"
+.PP
+Definition at line 82 of file OpenCLManager.h.
+.SS "\fBcl::Event\fP \fBcryo::OpenCLManager::event\fP\fC [protected]\fP"
+.PP
+Definition at line 83 of file OpenCLManager.h.
+.SS "bool \fBcryo::OpenCLManager::kernel_compilation_success\fP\fC [protected]\fP"
+.PP
+Definition at line 69 of file OpenCLManager.h.
+.SS "std::set<std::string> \fBcryo::OpenCLManager::kernelNames\fP\fC [protected]\fP"
+.PP
+Definition at line 65 of file OpenCLManager.h.
+.PP
+Referenced by parseFunctionNames(), and printKernelNames().
+.SS "std::map<std::string, boost::shared_ptr<\fBcl::Kernel\fP> > \fBcryo::OpenCLManager::kernels\fP\fC [protected]\fP"
+.PP
+Definition at line 78 of file OpenCLManager.h.
+.SS "std::string \fBcryo::OpenCLManager::kernelSource\fP\fC [protected]\fP"
+.PP
+Definition at line 63 of file OpenCLManager.h.
+.PP
+Referenced by loadKernelSource(), and cryo::runners::NullRunner::NullRunner().
+.SS "bool \fBcryo::OpenCLManager::platform_id_success\fP\fC [protected]\fP"
+.PP
+Definition at line 67 of file OpenCLManager.h.
+.SS "std::vector<\fBcl::Platform\fP> \fBcryo::OpenCLManager::platforms\fP\fC [protected]\fP"
+.PP
+Definition at line 71 of file OpenCLManager.h.
+.PP
+Referenced by initialise().
+.SS "\fBcl::Program\fP \fBcryo::OpenCLManager::program\fP\fC [protected]\fP"
+.PP
+Definition at line 80 of file OpenCLManager.h.
+.PP
+Referenced by compileKernel(), and loadKernel().
+.SS "std::string \fBcryo::OpenCLManager::sourceString\fP\fC [protected]\fP"
+.PP
+Definition at line 64 of file OpenCLManager.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.

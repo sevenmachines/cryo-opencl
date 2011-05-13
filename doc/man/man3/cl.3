@@ -1,0 +1,174 @@
+.TH "cl" 3 "Mon Mar 14 2011" "cryo-opencl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cl \- 
+.PP
+The OpenCL C++ bindings are defined within this namespace.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBdetail\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBstring\fP"
+.br
+.RI "\fISimple string class, that provides a limited subset of std::string functionality but avoids many of the issues that come with that class. \fP"
+.ti -1c
+.RI "class \fBvector\fP"
+.br
+.RI "\fIFixed sized vector implementation that mirroring std::vector functionality. \fP"
+.ti -1c
+.RI "struct \fBsize_t\fP"
+.br
+.RI "\fI\fBsize_t\fP class used to interface between C++ and OpenCL C calls that require arrays of \fBsize_t\fP values, who's size is known statically. \fP"
+.ti -1c
+.RI "struct \fBImageFormat\fP"
+.br
+.RI "\fI\fBImageFormat\fP interface fro cl_image_format. \fP"
+.ti -1c
+.RI "class \fBDevice\fP"
+.br
+.RI "\fI\fBDevice\fP interface for cl_device_id. \fP"
+.ti -1c
+.RI "class \fBPlatform\fP"
+.br
+.RI "\fI\fBPlatform\fP interface. \fP"
+.ti -1c
+.RI "class \fBContext\fP"
+.br
+.ti -1c
+.RI "class \fBEvent\fP"
+.br
+.RI "\fI\fBEvent\fP interface for cl_event. \fP"
+.ti -1c
+.RI "class \fBMemory\fP"
+.br
+.RI "\fI\fBMemory\fP interface for cl_mem. \fP"
+.ti -1c
+.RI "class \fBBuffer\fP"
+.br
+.RI "\fI\fBMemory\fP buffer interface. \fP"
+.ti -1c
+.RI "class \fBBufferGL\fP"
+.br
+.RI "\fI\fBMemory\fP buffer interface for GL interop. \fP"
+.ti -1c
+.RI "class \fBBufferRenderGL\fP"
+.br
+.RI "\fI\fBMemory\fP buffer interface for GL interop with renderbuffer. \fP"
+.ti -1c
+.RI "class \fBImage\fP"
+.br
+.RI "\fIBase class interface for all images. \fP"
+.ti -1c
+.RI "class \fBImage2D\fP"
+.br
+.RI "\fI\fBImage\fP interface for 2D images. \fP"
+.ti -1c
+.RI "class \fBImage2DGL\fP"
+.br
+.RI "\fI2D image interface for GL interop. \fP"
+.ti -1c
+.RI "class \fBImage3D\fP"
+.br
+.RI "\fI\fBImage\fP interface for 3D images. \fP"
+.ti -1c
+.RI "class \fBImage3DGL\fP"
+.br
+.ti -1c
+.RI "class \fBSampler\fP"
+.br
+.RI "\fI\fBSampler\fP interface for cl_sampler. \fP"
+.ti -1c
+.RI "class \fBNDRange\fP"
+.br
+.RI "\fI\fBNDRange\fP interface. \fP"
+.ti -1c
+.RI "struct \fBLocalSpaceArg\fP"
+.br
+.RI "\fILocal address raper for use with \fBKernel::setArg\fP. \fP"
+.ti -1c
+.RI "class \fBKernel\fP"
+.br
+.RI "\fI\fBKernel\fP interface that implements cl_kernel. \fP"
+.ti -1c
+.RI "class \fBProgram\fP"
+.br
+.RI "\fI\fBProgram\fP interface that implements cl_program. \fP"
+.ti -1c
+.RI "class \fBCommandQueue\fP"
+.br
+.RI "\fI\fBCommandQueue\fP interface for cl_command_queue. \fP"
+.ti -1c
+.RI "class \fBKernelFunctor\fP"
+.br
+.RI "\fI\fBKernel\fP functor interface. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::string \fBSTRING_CLASS\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static cl_int \fBUnloadCompiler\fP ()"
+.br
+.ti -1c
+.RI "static cl_int \fBWaitForEvents\fP (const VECTOR_CLASS< \fBEvent\fP > &events)"
+.br
+.ti -1c
+.RI "\fBLocalSpaceArg\fP \fB__local\fP (::\fBsize_t\fP size)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const \fBNDRange\fP \fBNullRange\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The OpenCL C++ bindings are defined within this namespace. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef std::string \fBcl::STRING_CLASS\fP"
+.PP
+Definition at line 413 of file cl.hpp.
+.SH "Function Documentation"
+.PP 
+.SS "\fBLocalSpaceArg\fP cl::__local (::size_tsize)\fC [inline]\fP"
+.PP
+Definition at line 2279 of file cl.hpp.
+.SS "static cl_int cl::UnloadCompiler ()\fC [inline, static]\fP"
+.PP
+Definition at line 1413 of file cl.hpp.
+.SS "static cl_int cl::WaitForEvents (const VECTOR_CLASS< Event > &events)\fC [inline, static]\fP"
+.PP
+Definition at line 1674 of file cl.hpp.
+.PP
+References cl::detail::errHandler().
+.SH "Variable Documentation"
+.PP 
+.SS "const \fBNDRange\fP \fBcl::NullRange\fP\fC [static]\fP"
+.PP
+Definition at line 2248 of file cl.hpp.
+.PP
+Referenced by cl::Kernel::bind().
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryo-opencl from the source code.
